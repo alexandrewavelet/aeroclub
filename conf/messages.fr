@@ -1,0 +1,33 @@
+# Default messages
+
+# --- Constraints
+constraint.required=Obligatoire
+constraint.min=Valeur minimale : {0}
+constraint.max=Valeur maximale : {0}
+constraint.minLength=Longueur minimale : {0}
+constraint.maxLength=Longueur maximale : {0}
+constraint.email=E-mail
+
+# --- Formats
+format.date=Date au format {0}
+format.numeric=Nombre numérique
+format.real=Nombre flottant
+
+# --- Errors
+error.invalid=Valeur invalide
+error.required=Ce champs est requis
+error.number=Valeur numérique attendue
+error.real=Nombre flottant attendu
+error.min=Doit être supérieur ou égal à {0}
+error.max=Doit être inférieur ou égal à {0}
+error.minLength=La longueur minimale est {0}
+error.maxLength=La longueur maximale est {0}
+error.email=Cet e-mail n'est pas valide
+error.pattern=Doit être de la forme {0}
+
+duration=Durée
+date=Date
+flightReduction=Réduction vol
+weekReduction=Réduction à la semaine
+specialPrice=Prix spécial
+initiationFee=Forfait d''initiation
