@@ -1,17 +1,18 @@
 @(flights: List[Flight])
 
 @import helper._
+@import helper.twitterBootstrap._
 
 @main("Liste des séquences de vol") {
     
     @if(flash.containsKey("success")) {
-        <div class="alert-message warning">
+        <div class="alert alert-success">
             @flash.get("success")
         </div>
     }
 
     @form(routes.Flights._new()) {
-        <input type="submit" value="Ajouter un nouveau vol">
+        <input type="submit" value="Ajouter un nouveau vol" class="btn primary">
     }
 
     <h2>Liste des vols : @flights.size() vols(s)</h2>
@@ -22,15 +23,15 @@
                 @flight
 
                 @form(routes.Flights.show(flight.id)) {
-                    <input type="submit" value="Afficher">
+                    <input type="submit" value="Afficher" class="btn primary">
                 }
 
                 @form(routes.Flights.edit(flight.id)) {
-                    <input type="submit" value="Modifier">
+                    <input type="submit" value="Modifier" class="btn primary">
                 }
 
                 @form(routes.Flights.delete(flight.id)) {
-                    <input type="submit" value="Supprimer">
+                    <input type="submit" value="Supprimer" class="btn primary">
                 }
             </li>
         }

@@ -1,6 +1,7 @@
 @(id: Long, flightForm: Form[Flight])
 
 @import helper._
+@import helper.twitterBootstrap._
 
 @main("Modifier une séquence de vol") {
     
@@ -15,7 +16,7 @@
         @inputText(flightForm("specialPrice"))
         @checkbox(flightForm("initiationFee"))
         
-        <input type="submit" value="Modifier le vol">
+        <input type="submit" value="Modifier le vol" class="btn primary">
         
     }
 }

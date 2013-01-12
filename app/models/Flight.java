@@ -11,8 +11,8 @@ import java.text.SimpleDateFormat;
 
 @Entity
 public class Flight extends Model {
-    
-    @Id
+	
+	@Id
 	public Long id;
 
 	@DateTime(pattern="dd/MM/yyyy")
@@ -31,13 +31,13 @@ public class Flight extends Model {
 	@Required
 	public Double specialPrice;
 
-	public Boolean initiationFee;
+	public Boolean initiationFee = false;
 
 	// missing plane, instructor, person
 
 	public static Finder<Long, Flight> find = new Finder(Long.class, Flight.class);
 
 	public String toString() {
-		return "Vol n°" + id + " du " + new SimpleDateFormat("dd/MM").format(date) + " d'une durée de " + duration + " heure(s)";
+		return "Vol n°" + id + " du " + new SimpleDateFormat("dd/MM/yyyy").format(date) + " d'une durée de " + duration + " heure(s)";
 	}
 }

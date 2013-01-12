@@ -41,7 +41,7 @@ public class Flights extends Controller {
 		}
 		else {
 			filledForm.get().save();
-		 	flash("success", "Le " + filledForm.get() + " a été correctement créé");
+			flash("success", filledForm.get() + " a été correctement créé");
 			return GO_HOME;
 		}
 	}
@@ -54,15 +54,15 @@ public class Flights extends Controller {
 		}
 		else {
 			filledForm.get().update(id);
-			flash("success", "Le " + filledForm.get() + " a été correctement modifié");
+			flash("success", filledForm.get() + " a été correctement modifié");
 			return GO_HOME;
 		}
 	}
 
 	// POST /flights/:id/delete
 	public static Result delete(Long id) {
-    	Flight.find.ref(id).delete();
-    	flash("success", "Le vol a été correctement supprimé");
-    	return GO_HOME;
+		Flight.find.ref(id).delete();
+		flash("success", "Le vol a été correctement supprimé");
+		return GO_HOME;
 	}
 }
