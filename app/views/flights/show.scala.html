@@ -1,0 +1,18 @@
+@(flight: Flight)
+
+@import helper._
+
+@main("Détail d'une séquence de vol") {
+    	
+
+    <h2>Détail de la séquence de vol n°@flight.id</h2>
+    
+    @flight
+    <ul>
+        <li>@flight.flightReduction</li>
+        <li>@flight.weekReduction</li>
+        <li>@flight.specialPrice</li>
+        <li>@flight.initiationFee</li>
+    </ul>
+
+}

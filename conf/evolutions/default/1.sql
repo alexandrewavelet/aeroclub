@@ -6,7 +6,7 @@
 create table flight (
   id                        bigint not null,
   date                      timestamp,
-  duration                  double,
+  duration                  integer,
   flight_reduction          double,
   week_reduction            double,
   special_price             double,

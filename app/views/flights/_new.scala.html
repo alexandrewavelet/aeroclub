@@ -1,0 +1,21 @@
+@(flightForm: Form[Flight])
+
+@import helper._
+
+@main("Ajouter une séquence de vol") {
+    
+    <h2>Saisie d'une séquence de vol</h2>
+    
+    @form(routes.Flights.create()) {
+        
+        @inputText(flightForm("date"))
+        @inputText(flightForm("duration"))
+        @inputText(flightForm("flightReduction"))
+        @inputText(flightForm("weekReduction"))
+        @inputText(flightForm("specialPrice"))
+        @checkbox(flightForm("initiationFee"))
+        
+        <input type="submit" value="Ajouter le vol">
+        
+    }
+}

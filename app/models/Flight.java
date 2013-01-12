@@ -6,6 +6,8 @@ import play.db.ebean.Model.Finder;
 import play.data.format.Formats.*;
 import play.data.validation.Constraints.*;
 import javax.persistence.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 @Entity
 public class Flight extends Model {
@@ -18,7 +20,7 @@ public class Flight extends Model {
 	public Date date = new Date();
 
 	@Required
-	public Double duration;
+	public Integer duration;
 
 	@Required
 	public Double flightReduction;
@@ -29,26 +31,13 @@ public class Flight extends Model {
 	@Required
 	public Double specialPrice;
 
-	@Required
 	public Boolean initiationFee;
 
 	// missing plane, instructor, person
 
 	public static Finder<Long, Flight> find = new Finder(Long.class, Flight.class);
 
-	public static List<Flight> all() {
-		return find.all();
-	}
-
-	public static void create(Flight flight) {
-		flight.save();
-	}
-
-	public static void update(Long id) {
-		find.ref(id).update();
-	}
-
-	public static void delete(Long id) {
-		find.ref(id).delete();
+	public String toString() {
+		return "Vol n°" + id + " du " + new SimpleDateFormat("dd/MM").format(date) + " d'une durée de " + duration + " heure(s)";
 	}
 }

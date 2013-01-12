@@ -1,0 +1,21 @@
+@(id: Long, flightForm: Form[Flight])
+
+@import helper._
+
+@main("Modifier une séquence de vol") {
+    
+    <h2>Modification d'une séquence de vol</h2>
+    
+    @form(routes.Flights.update(id)) {
+        
+        @inputText(flightForm("date"))
+        @inputText(flightForm("duration"))
+        @inputText(flightForm("flightReduction"))
+        @inputText(flightForm("weekReduction"))
+        @inputText(flightForm("specialPrice"))
+        @checkbox(flightForm("initiationFee"))
+        
+        <input type="submit" value="Modifier le vol">
+        
+    }
+}

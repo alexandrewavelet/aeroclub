@@ -10,7 +10,9 @@ GET     /assets/*file           controllers.Assets.at(path="/public", file)
 
 # Flights
 GET   /flights     				controllers.Flights.index()
-GET   /flights/:id				controllers.Flights.read(id: Long)
+GET   /flights/new              controllers.Flights._new()
+GET   /flights/:id              controllers.Flights.show(id: Long)
+GET   /flights/:id/edit			controllers.Flights.edit(id: Long)
 POST  /flights     				controllers.Flights.create()
-POST  /flight/:id/update		controllers.Flights.update(id: Long)
+POST  /flight/:id        		controllers.Flights.update(id: Long)
 POST  /flight/:id/delete		controllers.Flights.delete(id: Long)
