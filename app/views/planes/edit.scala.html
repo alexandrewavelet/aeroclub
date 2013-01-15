@@ -1,0 +1,25 @@
+@(id: Long, planeForm: Form[Plane])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Modifier un avion") {
+
+    @if(flash.containsKey("error")) {
+        <div class="alert alert-error">
+            @flash.get("error")
+        </div>
+    }
+    
+    <h2>Modification d'un avion</h2>
+    
+    @form(routes.Planes.update(id)) {
+        
+        @inputText(planeForm("matriculation"))
+        @inputText(planeForm("price"))
+        @inputText(planeForm("weekReduction"))
+        
+        <input type="submit" value="Modifier l'avion" class="btn primary">
+        
+    }
+}

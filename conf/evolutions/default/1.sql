@@ -4,28 +4,37 @@
 # --- !Ups
 
 create table flight (
-  id                        bigint not null,
-  date                      timestamp,
+  id                        bigint auto_increment not null,
+  plane_id                  bigint,
+  date                      datetime,
   duration                  integer,
   flight_reduction          double,
   week_reduction            double,
   special_price             double,
-  initiation_fee            boolean,
+  initiation_fee            tinyint(1) default 0,
   constraint pk_flight primary key (id))
 ;
 
-create sequence flight_seq;
+create table plane (
+  id                        bigint auto_increment not null,
+  matriculation             varchar(255),
+  price                     double,
+  week_reduction            double,
+  constraint pk_plane primary key (id))
+;
 
+alter table flight add constraint fk_flight_plane_1 foreign key (plane_id) references plane (id) on delete restrict on update restrict;
+create index ix_flight_plane_1 on flight (plane_id);
 
 
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
+SET FOREIGN_KEY_CHECKS=0;
 
-drop table if exists flight;
+drop table flight;
 
-SET REFERENTIAL_INTEGRITY TRUE;
+drop table plane;
 
-drop sequence if exists flight_seq;
+SET FOREIGN_KEY_CHECKS=1;
 

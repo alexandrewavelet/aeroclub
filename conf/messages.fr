@@ -31,3 +31,7 @@ flightReduction=Réduction vol
 weekReduction=Réduction à la semaine
 specialPrice=Prix spécial
 initiationFee=Forfait d''initiation
+plane.id=Avion
+
+matriculation=Immatriculation
+price=Prix

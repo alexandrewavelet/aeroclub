@@ -37,6 +37,7 @@ public class Flights extends Controller {
 	public static Result create() {
 		Form<Flight> filledForm = flightForm.bindFromRequest();
 		if (filledForm.hasErrors()) {
+			flash("error", "Une erreur est survenue");
 			return badRequest(views.html.flights._new.render(filledForm));
 		}
 		else {
@@ -50,6 +51,7 @@ public class Flights extends Controller {
 	public static Result update(Long id) {
 		Form<Flight> filledForm = flightForm.bindFromRequest();
 		if (filledForm.hasErrors()) {
+			flash("error", "Une erreur est survenue");
 			return badRequest(views.html.flights.edit.render(id, filledForm));
 		}
 		else {

@@ -4,6 +4,12 @@
 @import helper.twitterBootstrap._
 
 @main("Ajouter une séquence de vol") {
+
+    @if(flash.containsKey("error")) {
+        <div class="alert alert-error">
+            @flash.get("error")
+        </div>
+    }
     
     <h2>Saisie d'une séquence de vol</h2>
     
@@ -14,6 +20,7 @@
         @inputText(flightForm("flightReduction"))
         @inputText(flightForm("weekReduction"))
         @inputText(flightForm("specialPrice"))
+        @select(flightForm("plane.id"), options(Plane.options))
         @checkbox(flightForm("initiationFee"))
         
         <input type="submit" value="Ajouter le vol" class="btn primary">

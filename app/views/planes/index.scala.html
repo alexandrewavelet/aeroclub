@@ -1,9 +1,9 @@
-@(flights: List[Flight])
+@(planes: List[Plane])
 
 @import helper._
 @import helper.twitterBootstrap._
 
-@main("Liste des séquences de vol") {
+@main("Liste des avions") {
     
     @if(flash.containsKey("success")) {
         <div class="alert alert-success">
@@ -11,11 +11,11 @@
         </div>
     }
 
-    @form(routes.Flights._new()) {
-        <input type="submit" value="Ajouter un nouveau vol" class="btn primary">
+    @form(routes.Planes._new()) {
+        <input type="submit" value="Ajouter un nouvel avion" class="btn primary">
     }
 
-    <h2>Liste des vols : @flights.size() vols(s)</h2>
+    <h2>Liste des avions : @planes.size() avion(s)</h2>
     
     <table class="table">
         <tr>
@@ -24,21 +24,21 @@
             <td></td>
             <td></td>
         </tr>
-    @for(flight <- flights) {
+    @for(plane <- planes) {
         <tr>
-            <td>@flight</td>
+            <td>@plane</td>
             <td>
-            @form(routes.Flights.show(flight.id)) {
+            @form(routes.Planes.show(plane.id)) {
                 <input type="submit" value="Afficher" class="btn primary">
             }
             </td>
             <td>
-            @form(routes.Flights.edit(flight.id)) {
+            @form(routes.Planes.edit(plane.id)) {
                 <input type="submit" value="Modifier" class="btn primary">
             }
             </td>
             <td>
-            @form(routes.Flights.delete(flight.id)) {
+            @form(routes.Planes.delete(plane.id)) {
                 <input type="submit" value="Supprimer" class="btn primary">
             }
             </td>

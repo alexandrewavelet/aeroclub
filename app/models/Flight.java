@@ -15,6 +15,10 @@ public class Flight extends Model {
 	@Id
 	public Long id;
 
+	@ManyToOne
+	@Required
+	public Plane plane;
+
 	@DateTime(pattern="dd/MM/yyyy")
 	@Required
 	public Date date = new Date();
@@ -33,7 +37,7 @@ public class Flight extends Model {
 
 	public Boolean initiationFee = false;
 
-	// missing plane, instructor, person
+	// missing instructor, person
 
 	public static Finder<Long, Flight> find = new Finder(Long.class, Flight.class);
 

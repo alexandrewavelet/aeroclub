@@ -4,7 +4,13 @@
 @import helper.twitterBootstrap._
 
 @main("Modifier une séquence de vol") {
-    
+
+    @if(flash.containsKey("error")) {
+        <div class="alert alert-error">
+            @flash.get("error")
+        </div>
+    }
+
     <h2>Modification d'une séquence de vol</h2>
     
     @form(routes.Flights.update(id)) {
@@ -14,6 +20,7 @@
         @inputText(flightForm("flightReduction"))
         @inputText(flightForm("weekReduction"))
         @inputText(flightForm("specialPrice"))
+        @select(flightForm("plane.id"), options(Plane.options))
         @checkbox(flightForm("initiationFee"))
         
         <input type="submit" value="Modifier le vol" class="btn primary">

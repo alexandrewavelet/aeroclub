@@ -5,15 +5,20 @@
 
 @main("Détail d'une séquence de vol") {
     	
-
     <h2>Détail de la séquence de vol n°@flight.id</h2>
     
-    @flight
-    <ul>
-        <li>@flight.flightReduction</li>
-        <li>@flight.weekReduction</li>
-        <li>@flight.specialPrice</li>
-        <li>@flight.initiationFee</li>
-    </ul>
+    <b>@flight</b>
+    <br />
+	<b>Réduction vol :</b> @flight.flightReduction
+	<br />
+    <b>Réduction semaine :</b> @flight.weekReduction
+    <br />
+    <b>Prix spécial :</b> @flight.specialPrice
+    <br />
+    <b>Avion utilisé :</b> @flight.plane
+    <br />
+    @if(flight.initiationFee) {
+        <i>Forfait initiation</i>
+    }
 
 }

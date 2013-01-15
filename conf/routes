@@ -16,3 +16,12 @@ GET   /flights/:id/edit			controllers.Flights.edit(id: Long)
 POST  /flights     				controllers.Flights.create()
 POST  /flight/:id        		controllers.Flights.update(id: Long)
 POST  /flight/:id/delete		controllers.Flights.delete(id: Long)
+
+# Planes
+GET   /planes     				controllers.Planes.index()
+GET   /planes/new              	controllers.Planes._new()
+GET   /planes/:id              	controllers.Planes.show(id: Long)
+GET   /planes/:id/edit			controllers.Planes.edit(id: Long)
+POST  /planes     				controllers.Planes.create()
+POST  /plane/:id        		controllers.Planes.update(id: Long)
+POST  /plane/:id/delete			controllers.Planes.delete(id: Long)

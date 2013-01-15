@@ -1,0 +1,28 @@
+@(plane: Plane)
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Détail d'un avion") {
+    	
+    <h2>Détail de l'avion n°@plane.id</h2>
+    
+    <b>@plane</b>
+    <br />
+	<b>Immatriculation :</b> @plane.matriculation   
+    <br />
+    <b>Prix :</b> @plane.price
+	<br />
+    <b>Réduction semaine :</b> @plane.weekReduction
+    <br />
+    <b>Vols en cours : </b>
+    @if(plane.flights.size().equals(0)) {
+    	Aucun
+    }
+    <ul>
+    @for(flight <- plane.flights) {
+    	<li> @flight </li>
+    }
+    </ul>
+
+}
