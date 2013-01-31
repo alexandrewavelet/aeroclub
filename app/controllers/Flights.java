@@ -4,33 +4,33 @@ import play.*;
 import play.mvc.*;
 import play.data.*;
 
-import views.html.*;
+import views.html.flights.*;
 import models.Flight;
 
 public class Flights extends Controller {
   
-	static Form<Flight> flightForm = form(Flight.class);
+	static Form<Flight> flightForm = Form.form(Flight.class);
 	static Result GO_HOME = redirect(routes.Flights.index());
 
 	// GET /flights
 	public static Result index() {
-		return ok(views.html.flights.index.render(Flight.find.all()));
+		return ok(index.render(Flight.find.all()));
 	}
 
 	// GET /flights/:id
 	public static Result show(Long id) {
-		return ok(views.html.flights.show.render(Flight.find.byId(id)));
+		return ok(show.render(Flight.find.byId(id)));
 	}
 
 	// GET /flights/new
 	public static Result _new() {
-		return ok(views.html.flights._new.render(flightForm));
+		return ok(_new.render(flightForm));
 	}
 
 	// GET /flights/:id/edit
 	public static Result edit(Long id) {
 		Form<Flight> filledForm = flightForm.fill(Flight.find.byId(id));
-		return ok(views.html.flights.edit.render(id, filledForm));
+		return ok(edit.render(id, filledForm));
 	}
 
 	// POST /flights
@@ -38,7 +38,7 @@ public class Flights extends Controller {
 		Form<Flight> filledForm = flightForm.bindFromRequest();
 		if (filledForm.hasErrors()) {
 			flash("error", "Une erreur est survenue");
-			return badRequest(views.html.flights._new.render(filledForm));
+			return badRequest(_new.render(filledForm));
 		}
 		else {
 			filledForm.get().save();
@@ -52,7 +52,7 @@ public class Flights extends Controller {
 		Form<Flight> filledForm = flightForm.bindFromRequest();
 		if (filledForm.hasErrors()) {
 			flash("error", "Une erreur est survenue");
-			return badRequest(views.html.flights.edit.render(id, filledForm));
+			return badRequest(edit.render(id, filledForm));
 		}
 		else {
 			filledForm.get().update(id);
@@ -63,7 +63,7 @@ public class Flights extends Controller {
 
 	// POST /flights/:id/delete
 	public static Result delete(Long id) {
-		Flight.find.ref(id).delete();
+		Flight.find.byId(id).delete();
 		flash("success", "Le vol a été correctement supprimé");
 		return GO_HOME;
 	}

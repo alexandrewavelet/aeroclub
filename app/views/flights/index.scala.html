@@ -2,6 +2,7 @@
 
 @import helper._
 @import helper.twitterBootstrap._
+@import play.i18n._
 
 @main("Liste des séquences de vol") {
     
@@ -11,7 +12,7 @@
         </div>
     }
 
-    @form(routes.Flights._new()) {
+    @form(routes.Flights._new) {
         <input type="submit" value="Ajouter un nouveau vol" class="btn primary">
     }
 

@@ -2,6 +2,7 @@
 
 @import helper._
 @import helper.twitterBootstrap._
+@import play.i18n._
 
 @main("Ajouter une séquence de vol") {
 
@@ -13,7 +14,7 @@
     
     <h2>Saisie d'une séquence de vol</h2>
     
-    @form(routes.Flights.create()) {
+    @form(routes.Flights.create) {
         
         @inputText(flightForm("date"))
         @inputText(flightForm("duration"))

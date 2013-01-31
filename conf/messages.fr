@@ -25,6 +25,7 @@ error.maxLength=La longueur maximale est {0}
 error.email=Cet e-mail n'est pas valide
 error.pattern=Doit être de la forme {0}
 
+# --- Form messages
 duration=Durée
 date=Date
 flightReduction=Réduction vol
@@ -32,6 +33,17 @@ weekReduction=Réduction à la semaine
 specialPrice=Prix spécial
 initiationFee=Forfait d''initiation
 plane.id=Avion
-
 matriculation=Immatriculation
 price=Prix
+username=Nom d''utilisateur
+password=Mot de passe
+
+# --- Views messages
+views.main.homepage=Accueil
+views.main.flightsMenu=Gestions des vols
+views.main.planesMenu=Gestions des avions
+
+views.index.title=Page d''accueil aeroclub
+views.index.welcome.message=Bienvenue sur l''application de l''aeroclub
+views.index.connect.me=Se connecter
+views.index.connection=Connexion

@@ -1,8 +1,27 @@
+@(loginForm: Form[Application.Login])
+
 @import helper._
 @import helper.twitterBootstrap._
+@import play.i18n._
 
-@main("Page d'accueil aeroclub") {
+@main(Messages.get("views.index.title")) {
     
-    <h2>Bienvenue sur l'application de l'aeroclub</h2>
+    <h2>@Messages.get("views.index.welcome.message")</h2>
 
+	@if(flash.containsKey("error")) {
+        <div class="alert alert-error">
+            @flash.get("error")
+        </div>
+    }
+    
+    <h4>@Messages.get("views.index.connection")</h4>
+    
+    @form(routes.Application.login) {
+        
+        @inputText(loginForm("username"))
+        @inputPassword(loginForm("password"))
+        
+        <input type="submit" value="@Messages.get("views.index.connect.me")" class="btn primary">
+        
+    }
 }

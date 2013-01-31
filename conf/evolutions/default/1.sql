@@ -23,6 +23,13 @@ create table plane (
   constraint pk_plane primary key (id))
 ;
 
+create table user (
+  id                        bigint auto_increment not null,
+  login                     varchar(255),
+  password                  varchar(255),
+  constraint pk_user primary key (id))
+;
+
 alter table flight add constraint fk_flight_plane_1 foreign key (plane_id) references plane (id) on delete restrict on update restrict;
 create index ix_flight_plane_1 on flight (plane_id);
 
@@ -35,6 +42,8 @@ SET FOREIGN_KEY_CHECKS=0;
 drop table flight;
 
 drop table plane;
+
+drop table user;
 
 SET FOREIGN_KEY_CHECKS=1;
 

@@ -1,5 +1,7 @@
 @(title: String)(content: Html)
 
+@import play.i18n._
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,9 +31,9 @@
 	          <a class="brand" href="#">Aeroclub</a>
 	          <div class="nav-collapse collapse">
 	            <ul class="nav">
-	              <li class="active"><a href="/">Accueil</a></li>
-	              <li><a href="/flights">Gestions des vols</a></li>
-                  <li><a href="/planes">Gestions des avions</a></li>
+	              <li class="active"><a href="/">@Messages.get("views.main.homepage")</a></li>
+	              <li><a href="/flights">@Messages.get("views.main.flightsMenu")</a></li>
+                  <li><a href="/planes">@Messages.get("views.main.planesMenu")</a></li>
 	            </ul>
 	          </div>
 	        </div>

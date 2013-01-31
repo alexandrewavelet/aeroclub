@@ -2,6 +2,7 @@
 
 @import helper._
 @import helper.twitterBootstrap._
+@import play.i18n._
 
 @main("Ajouter un avion") {
 
@@ -13,7 +14,7 @@
     
     <h2>Saisie d'un nouvel avion</h2>
     
-    @form(routes.Planes.create()) {
+    @form(routes.Planes.create) {
         
         @inputText(planeForm("matriculation"))
         @inputText(planeForm("price"))

@@ -1,17 +1,20 @@
 import sbt._
 import Keys._
-import PlayProject._
+import play.Project._
 
 object ApplicationBuild extends Build {
 
     val appName         = "aeroclub"
-    val appVersion      = "1.0-SNAPSHOT"
+    val appVersion      = "1.0"
 
     val appDependencies = Seq(
+	    javaCore,
+	    javaJdbc,
+	    javaEbean,
       "mysql" % "mysql-connector-java" % "5.1.21"
     )
 
-    val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings(
+    val main = play.Project(appName, appVersion, appDependencies).settings(
       // Add your own project settings here      
     )
 
