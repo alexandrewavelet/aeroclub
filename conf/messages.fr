@@ -39,7 +39,6 @@ username=Nom d''utilisateur
 password=Mot de passe
 
 # --- Views messages
-views.main.homepage=Accueil
 views.main.flightsMenu=Gestions des vols
 views.main.planesMenu=Gestions des avions
 
@@ -47,3 +46,20 @@ views.index.title=Page d''accueil aeroclub
 views.index.welcome.message=Bienvenue sur l''application de l''aeroclub
 views.index.connect.me=Se connecter
 views.index.connection=Connexion
+
+# --- Models messages
+models.plane.toString=Avion n°{0} immatriculé {1}
+models.user.toString=Utilisateur n°{0} : {1}
+models.flight.toString=Vol n°{0} du {1} d''une durée de {2} heure(s)
+
+# --- Controllers messages
+controllers.error=Une erreur est survenue
+controllers.updateSuccess={0} a été correctement créé
+controllers.createSuccess={0} a été correctement modifié
+
+controllers.application.logout=Vous avez été déconnecté avec succès
+controllers.application.login=Vous avez été connecté avec succès
+
+controllers.flights.deleteSuccess=Le vol a été correctement supprimé
+
+controllers.planes.deleteSuccess=L''avion a été correctement supprimé

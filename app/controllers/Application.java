@@ -3,8 +3,8 @@ package controllers;
 import play.*;
 import play.mvc.*;
 import play.data.*;
-
 import views.html.*;
+import play.i18n.*;
 
 public class Application extends Controller {
   	
@@ -26,18 +26,18 @@ public class Application extends Controller {
 	public static Result login() {
 		Form<Login> filledForm = loginForm.bindFromRequest();
 		if (filledForm.hasErrors()) {
-			flash("error", "Une erreur est survenue");
+			flash("error", Messages.get("controllers.error"));
 			return badRequest(index.render(filledForm));
 		}
 		else {
-			flash("success", "Vous êtes connecté sous le compte");
+			flash("success", Messages.get("controllers.application.login"));
 			return redirect(routes.Application.index());
 		}
 	}
 
 	// GET /logout
 	public static Result logout() {
-		flash("success", "Vous avez été déconnecté avec succès");
+		flash("success", Messages.get("controllers.application.logout"));
 		return redirect(routes.Application.index());
 	}
 }

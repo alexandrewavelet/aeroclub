@@ -8,6 +8,7 @@ import play.data.validation.Constraints.*;
 import javax.persistence.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import play.i18n.*;
 
 @Entity
 public class Flight extends Model {
@@ -42,6 +43,6 @@ public class Flight extends Model {
 	public static Finder<Long, Flight> find = new Finder(Long.class, Flight.class);
 
 	public String toString() {
-		return "Vol n°" + id + " du " + new SimpleDateFormat("dd/MM/yyyy").format(date) + " d'une durée de " + duration + " heure(s)";
+		return Messages.get("models.flight.toString", id, new SimpleDateFormat("dd/MM/yyyy").format(date), duration);
 	}
 }

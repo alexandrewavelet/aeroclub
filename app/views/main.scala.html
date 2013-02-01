@@ -28,12 +28,11 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </a>
-	          <a class="brand" href="#">Aeroclub</a>
+	          <a class="brand" href="@routes.Application.index">Aeroclub</a>
 	          <div class="nav-collapse collapse">
 	            <ul class="nav">
-	              <li class="active"><a href="/">@Messages.get("views.main.homepage")</a></li>
-	              <li><a href="/flights">@Messages.get("views.main.flightsMenu")</a></li>
-                  <li><a href="/planes">@Messages.get("views.main.planesMenu")</a></li>
+                    <li @if(request.path == routes.Flights.index.url) { class="active" } ><a href="@routes.Flights.index">@Messages.get("views.main.flightsMenu")</a></li>
+                    <li @if(request.path == routes.Planes.index.url)  { class="active" } ><a href="@routes.Planes.index">@Messages.get("views.main.planesMenu")</a></li>
 	            </ul>
 	          </div>
 	        </div>
