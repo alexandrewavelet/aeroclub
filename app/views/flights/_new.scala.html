@@ -4,7 +4,7 @@
 @import helper.twitterBootstrap._
 @import play.i18n._
 
-@main("Ajouter une séquence de vol") {
+@main(Messages.get("views.flights.new.title")) {
 
     @if(flash.containsKey("error")) {
         <div class="alert alert-error">
@@ -12,19 +12,20 @@
         </div>
     }
     
-    <h2>Saisie d'une séquence de vol</h2>
+    <h2>@Messages.get("views.flights.new.subtitle")</h2>
     
     @form(routes.Flights.create) {
         
-        @inputText(flightForm("date"))
-        @inputText(flightForm("duration"))
-        @inputText(flightForm("flightReduction"))
-        @inputText(flightForm("weekReduction"))
-        @inputText(flightForm("specialPrice"))
-        @select(flightForm("plane.id"), options(Plane.options))
-        @checkbox(flightForm("initiationFee"))
+        @inputText(flightForm("date"),                          '_label -> Messages.get("views.flights.date"))
+        @inputText(flightForm("duration"),                      '_label -> Messages.get("views.flights.duration"))
+        @inputText(flightForm("flightReduction"),               '_label -> Messages.get("views.flights.flightReduction"))
+        @inputText(flightForm("weekReduction"),                 '_label -> Messages.get("views.flights.weekReduction"))
+        @inputText(flightForm("specialPrice"),                  '_label -> Messages.get("views.flights.specialPrice"))
+        @select(flightForm("plane.id"), options(Plane.options), '_label -> Messages.get("views.flights.plane"))
+        @checkbox(flightForm("initiationFee"),                  '_label -> Messages.get("views.flights.initiationFee"))
         
-        <input type="submit" value="Ajouter le vol" class="btn primary">
-        
+        <input type="submit" value="@Messages.get("views.flights.new.submit")" class="btn">
+        <a href="@routes.Flights.index" class="btn btn-link">@Messages.get("views.back")</a>
+
     }
 }

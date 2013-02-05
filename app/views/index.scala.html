@@ -18,8 +18,8 @@
     
     @form(routes.Application.login) {
         
-        @inputText(loginForm("username"))
-        @inputPassword(loginForm("password"))
+        @inputText(loginForm("username"),     '_label -> Messages.get("views.index.username"))
+        @inputPassword(loginForm("password"), '_label -> Messages.get("views.index.password"))
         
         <input type="submit" value="@Messages.get("views.index.connect.me")" class="btn primary">
         

@@ -4,22 +4,23 @@
 @import helper.twitterBootstrap._
 @import play.i18n._
 
-@main("Détail d'une séquence de vol") {
+@main(Messages.get("views.flights.show.title")) {
     	
-    <h2>Détail de la séquence de vol n°@flight.id</h2>
+    <h2>@Messages.get("views.flights.show.subtitle", flight.id)</h2>
     
     <b>@flight</b>
     <br />
-	<b>Réduction vol :</b> @flight.flightReduction
+	<b>@Messages.get("views.flights.flightReduction") :</b> @flight.flightReduction
 	<br />
-    <b>Réduction semaine :</b> @flight.weekReduction
+    <b>@Messages.get("views.flights.weekReduction") :</b> @flight.weekReduction
     <br />
-    <b>Prix spécial :</b> @flight.specialPrice
+    <b>@Messages.get("views.flights.specialPrice") :</b> @flight.specialPrice
     <br />
-    <b>Avion utilisé :</b> @flight.plane
+    <b>@Messages.get("views.flights.show.plane") :</b> @flight.plane
     <br />
     @if(flight.initiationFee) {
-        <i>Forfait initiation</i>
+        <i>@Messages.get("views.flights.initiationFee")</i>
     }
+    <a href="@routes.Flights.index" class="btn btn-link">@Messages.get("views.back")</a>
 
 }

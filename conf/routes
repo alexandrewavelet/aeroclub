@@ -3,27 +3,28 @@
 # ~~~~
 
 # Home page
-GET     /                       controllers.Application.index()
+GET    /                        controllers.Application.index
+GET    /lang/:code              controllers.Application.setLang(code: String)
 
 # Authentication
-POST   /login 					controllers.Application.login()
-GET    /logout 					controllers.Application.logout()
+POST   /login 					controllers.Application.login
+GET    /logout 					controllers.Application.logout
 
 # Flights
-GET   /flights     				controllers.Flights.index()
-GET   /flights/new              controllers.Flights._new()
+GET   /flights     				controllers.Flights.index
+GET   /flights/new              controllers.Flights._new
 GET   /flights/:id              controllers.Flights.show(id: Long)
 GET   /flights/:id/edit			controllers.Flights.edit(id: Long)
-POST  /flights     				controllers.Flights.create()
+POST  /flights     				controllers.Flights.create
 POST  /flight/:id        		controllers.Flights.update(id: Long)
 POST  /flight/:id/delete		controllers.Flights.delete(id: Long)
 
 # Planes
-GET   /planes     				controllers.Planes.index()
-GET   /planes/new              	controllers.Planes._new()
+GET   /planes     				controllers.Planes.index
+GET   /planes/new              	controllers.Planes._new
 GET   /planes/:id              	controllers.Planes.show(id: Long)
 GET   /planes/:id/edit			controllers.Planes.edit(id: Long)
-POST  /planes     				controllers.Planes.create()
+POST  /planes     				controllers.Planes.create
 POST  /plane/:id        		controllers.Planes.update(id: Long)
 POST  /plane/:id/delete			controllers.Planes.delete(id: Long)
 

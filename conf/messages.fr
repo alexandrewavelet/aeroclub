@@ -25,27 +25,73 @@ error.maxLength=La longueur maximale est {0}
 error.email=Cet e-mail n'est pas valide
 error.pattern=Doit être de la forme {0}
 
-# --- Form messages
-duration=Durée
-date=Date
-flightReduction=Réduction vol
-weekReduction=Réduction à la semaine
-specialPrice=Prix spécial
-initiationFee=Forfait d''initiation
-plane.id=Avion
-matriculation=Immatriculation
-price=Prix
-username=Nom d''utilisateur
-password=Mot de passe
-
 # --- Views messages
-views.main.flightsMenu=Gestions des vols
-views.main.planesMenu=Gestions des avions
+views.show=Afficher
+views.edit=Modifier
+views.delete=Supprimer
+views.none=Aucun
+views.back=Retour
 
+# --- Main
+views.main.flightsMenu=Gestion des vols
+views.main.planesMenu=Gestion des avions
+views.main.switchLanguage=Changer de langue
+
+# --- Index
 views.index.title=Page d''accueil aeroclub
 views.index.welcome.message=Bienvenue sur l''application de l''aeroclub
 views.index.connect.me=Se connecter
 views.index.connection=Connexion
+views.index.username=Nom d''utilisateur
+views.index.password=Mot de passe
+
+# --- Planes
+views.planes.matriculation=Immatriculation
+views.planes.price=Prix
+views.planes.weekReduction=Réduction semaine
+
+views.planes.new.title=Ajouter un avion
+views.planes.new.subtitle=Saisie d''un nouvel avion
+views.planes.new.submit=Ajouter l''avion
+
+views.planes.edit.title=Modifier un avion
+views.planes.edit.subtitle=Modification d''un avion
+views.planes.edit.submit=Modifier l''avion
+
+views.planes.index.title=Liste des avions
+views.planes.index.add=Ajouter un nouvel avion
+views.planes.index.subtitle=Liste des avions : {0} avion(s)
+views.planes.index.description=Descriptif
+
+views.planes.show.title=Détail d''un avion
+views.planes.show.subtitle=Détail de l''avion n°{0}
+views.planes.show.flights=Vols en cours
+
+# --- Flights
+views.flights.flightReduction=Réduction vol
+views.flights.weekReduction=Réduction semaine
+views.flights.specialPrice=Prix spécial
+views.flights.initiationFee=Forfait initiation
+views.flights.duration=Durée
+views.flights.date=Date
+views.flights.plane=Avion
+
+views.flights.new.title=Ajouter une séquence de vol
+views.flights.new.subtitle=Saisie d''une séquence de vol
+views.flights.new.submit=Ajouter le vol
+
+views.flights.edit.title=Modifier une séquence de vol
+views.flights.edit.subtitle=Modification d''une séquence de vol
+views.flights.edit.submit=Modifier le vol
+
+views.flights.index.title=Liste des séquences de vol
+views.flights.index.add=Ajouter un nouveau vol
+views.flights.index.subtitle=Liste des vols : {0} vols(s)
+views.flights.index.description=Descriptif
+
+views.flights.show.title=Détail d''une séquence de vol
+views.flights.show.subtitle=Détail de la séquence de vol n°{0}
+views.flights.show.plane=Avion utilisé
 
 # --- Models messages
 models.plane.toString=Avion n°{0} immatriculé {1}
@@ -54,8 +100,8 @@ models.flight.toString=Vol n°{0} du {1} d''une durée de {2} heure(s)
 
 # --- Controllers messages
 controllers.error=Une erreur est survenue
-controllers.updateSuccess={0} a été correctement créé
-controllers.createSuccess={0} a été correctement modifié
+controllers.updateSuccess={0} a été correctement modifié
+controllers.createSuccess={0} a été correctement créé
 
 controllers.application.logout=Vous avez été déconnecté avec succès
 controllers.application.login=Vous avez été connecté avec succès

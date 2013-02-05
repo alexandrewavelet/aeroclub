@@ -4,7 +4,7 @@
 @import helper.twitterBootstrap._
 @import play.i18n._
 
-@main("Liste des séquences de vol") {
+@main(Messages.get("views.flights.index.title")) {
     
     @if(flash.containsKey("success")) {
         <div class="alert alert-success">
@@ -13,14 +13,14 @@
     }
 
     @form(routes.Flights._new) {
-        <input type="submit" value="Ajouter un nouveau vol" class="btn primary">
+        <input type="submit" value="@Messages.get("views.flights.index.add")" class="btn">
     }
 
-    <h2>Liste des vols : @flights.size() vols(s)</h2>
+    <h2>@Messages.get("views.flights.index.subtitle", flights.size.toString)</h2>
     
     <table class="table">
         <tr>
-            <th>Descriptif</th>
+            <th>@Messages.get("views.flights.index.description")</th>
             <td></td>
             <td></td>
             <td></td>
@@ -30,17 +30,17 @@
             <td>@flight</td>
             <td>
             @form(routes.Flights.show(flight.id)) {
-                <input type="submit" value="Afficher" class="btn primary">
+                <input type="submit" value="@Messages.get("views.show")" class="btn btn-primary">
             }
             </td>
             <td>
             @form(routes.Flights.edit(flight.id)) {
-                <input type="submit" value="Modifier" class="btn primary">
+                <input type="submit" value="@Messages.get("views.edit")" class="btn btn-primary">
             }
             </td>
             <td>
             @form(routes.Flights.delete(flight.id)) {
-                <input type="submit" value="Supprimer" class="btn primary">
+                <input type="submit" value="@Messages.get("views.delete")" class="btn btn-primary">
             }
             </td>
         </tr>

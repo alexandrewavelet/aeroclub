@@ -9,8 +9,8 @@
         <title>@title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap.css")">
-        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap-responsive.css")">
         <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap-responsive.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <script src="@routes.Assets.at("javascripts/jquery.js")"></script>
         <script src="@routes.Assets.at("javascripts/bootstrap.js")"></script>
@@ -33,6 +33,13 @@
 	            <ul class="nav">
                     <li @if(request.path == routes.Flights.index.url) { class="active" } ><a href="@routes.Flights.index">@Messages.get("views.main.flightsMenu")</a></li>
                     <li @if(request.path == routes.Planes.index.url)  { class="active" } ><a href="@routes.Planes.index">@Messages.get("views.main.planesMenu")</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Messages.get("views.main.switchLanguage") <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@routes.Application.setLang("fr")">@if(request.cookie("PLAY_LANG").value == "fr") { <i class="icon-ok"></i> } Français</a></li>
+                            <li><a href="@routes.Application.setLang("en")">@if(request.cookie("PLAY_LANG").value == "en") { <i class="icon-ok"></i> } English</a></li>
+                        </ul>
+                    </li>
 	            </ul>
 	          </div>
 	        </div>

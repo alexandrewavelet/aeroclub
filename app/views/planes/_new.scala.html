@@ -4,7 +4,7 @@
 @import helper.twitterBootstrap._
 @import play.i18n._
 
-@main("Ajouter un avion") {
+@main(Messages.get("views.planes.new.title")) {
 
     @if(flash.containsKey("error")) {
         <div class="alert alert-error">
@@ -12,15 +12,16 @@
         </div>
     }
     
-    <h2>Saisie d'un nouvel avion</h2>
+    <h2>@Messages.get("views.planes.new.subtitle")</h2>
     
     @form(routes.Planes.create) {
         
-        @inputText(planeForm("matriculation"))
-        @inputText(planeForm("price"))
-        @inputText(planeForm("weekReduction"))
+        @inputText(planeForm("matriculation"), '_label -> Messages.get("views.planes.matriculation"))
+        @inputText(planeForm("price"),         '_label -> Messages.get("views.planes.price"))
+        @inputText(planeForm("weekReduction"), '_label -> Messages.get("views.planes.weekReduction"))
         
-        <input type="submit" value="Ajouter l'avion" class="btn primary">
+        <input type="submit" value="@Messages.get("views.planes.new.submit")" class="btn">
+        <a href="@routes.Planes.index" class="btn btn-link">@Messages.get("views.back")</a>
         
     }
 }

@@ -22,6 +22,12 @@ public class Application extends Controller {
 		return ok(index.render(loginForm));
 	}
 
+	// GET /:code
+	public static Result setLang(String code) {
+		changeLang(code);
+		return redirect(routes.Application.index());
+	}
+
 	// POST /login
 	public static Result login() {
 		Form<Login> filledForm = loginForm.bindFromRequest();

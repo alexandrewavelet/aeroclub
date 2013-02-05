@@ -4,26 +4,27 @@
 @import helper.twitterBootstrap._
 @import play.i18n._
 
-@main("Détail d'un avion") {
+@main(Messages.get("views.planes.show.title")) {
     	
-    <h2>Détail de l'avion n°@plane.id</h2>
+    <h2>@Messages.get("views.planes.show.subtitle", plane.id.toString)</h2>
     
     <b>@plane</b>
     <br />
-	<b>Immatriculation :</b> @plane.matriculation   
+	<b>@Messages.get("views.planes.matriculation") :</b> @plane.matriculation   
     <br />
-    <b>Prix :</b> @plane.price
+    <b>@Messages.get("views.planes.price") :</b> @plane.price
 	<br />
-    <b>Réduction semaine :</b> @plane.weekReduction
+    <b>@Messages.get("views.planes.weekReduction") :</b> @plane.weekReduction
     <br />
-    <b>Vols en cours : </b>
-    @if(plane.flights.size() == 0) {
-    	Aucun
+    <b>@Messages.get("views.planes.show.flights") : </b>
+    @if(plane.flights.size == 0) {
+    	@Messages.get("views.none")
     }
     <ul>
     @for(flight <- plane.flights) {
     	<li> @flight </li>
     }
     </ul>
+    <a href="@routes.Planes.index" class="btn btn-link">@Messages.get("views.back")</a>
 
 }

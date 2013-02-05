@@ -25,16 +25,87 @@ error.maxLength=Maximum length is {0}
 error.email=Valid email required
 error.pattern=Must satisfy {0}
 
-duration=Duration
-date=Date
-flightReduction=Flight reduction
-weekReduction=Week reduction
-specialPrice=Special price
-initiationFee=Initiation fee
-plane.id=Plane
+# --- Views messages
+views.show=Show
+views.edit=Edit
+views.delete=Delete
+views.none=None
+view.back=Back
 
-matriculation=Matriculation
-price=Price
+# --- Main
+views.main.flightsMenu=Flights management
+views.main.planesMenu=Planes management
+views.main.switchLanguage=Switch language
 
-username=Username
-password=Password
+# --- Index
+views.index.title=Aeroclub homepage
+views.index.welcome.message=Welcome to the aeroclub application
+views.index.connect.me=Sign in
+views.index.connection=Connection
+views.index.username=Username
+views.index.password=Password
+
+# --- Planes
+views.planes.matriculation=Matriculation
+views.planes.price=Price
+views.planes.weekReduction=Week reduction
+
+views.planes.new.title=Add a plane
+views.planes.new.subtitle=Entering a new plane
+views.planes.new.submit=Add the plane
+
+views.planes.edit.title=Edit a plane
+views.planes.edit.subtitle=Changing a plane
+views.planes.edit.submit=Edit the plane
+
+views.planes.index.title=Planes list
+views.planes.index.add=Add a new plane
+views.planes.index.subtitle=Planes list : {0} plane(s)
+views.planes.index.description=Description
+
+views.planes.show.title=Details of a plane
+views.planes.show.subtitle=Details of plane n°{0}
+views.planes.show.flights=Under way flights
+
+# --- Flights
+views.flights.flightReduction=Flight reduction
+views.flights.weekReduction=Week reduction
+views.flights.specialPrice=Special price
+views.flights.initiationFee=Initiation fee
+views.flights.duration=Duration
+views.flights.date=Date
+views.flights.plane=Plane
+
+views.flights.new.title=Add a flight sequence
+views.flights.new.subtitle=Entering a flight sequence
+views.flights.new.submit=Add the flight
+
+views.flights.edit.title=Edit a flight sequence
+views.flights.edit.subtitle=Changing a flight sequence
+views.flights.edit.submit=Edit the flight
+
+views.flights.index.title=Flights list
+views.flights.index.add=Add a new flight
+views.flights.index.subtitle=Flights list : {0} flight(s)
+views.flights.index.description=Description
+
+views.flights.show.title=Details of a flight sequence
+views.flights.show.subtitle=Details of flight sequence n°{0}
+views.flights.show.plane=Used plane
+
+# --- Models messages
+models.plane.toString=Plane n°{0} registered {1}
+models.user.toString=User n°{0} : {1}
+models.flight.toString=Flight n°{0} on {1} with a duration of {2} hour(s)
+
+# --- Controllers messages
+controllers.error=An error has occured
+controllers.updateSuccess={0} has been successfully modified
+controllers.createSuccess={0} has been successfully created
+
+controllers.application.logout=You have been successfully logged out
+controllers.application.login=You have been logged successfully
+
+controllers.flights.deleteSuccess=The flight has been successfully removed
+
+controllers.planes.deleteSuccess=The plane has been successfully removed
