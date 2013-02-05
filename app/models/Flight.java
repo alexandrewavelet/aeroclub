@@ -39,7 +39,7 @@ public class Flight extends Model {
 
 	public Boolean initiationFee = false;
 
-	// missing instructor, person
+	public final static Integer DEFAULT_PAGE_SIZE = 10;
 
 	public static Finder<Long, Flight> find = new Finder(Long.class, Flight.class);
 

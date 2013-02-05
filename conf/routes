@@ -11,7 +11,7 @@ POST   /login 					controllers.Application.login
 GET    /logout 					controllers.Application.logout
 
 # Flights
-GET   /flights 					controllers.Flights.index(page: Int ?= 0, pageSize: Int ?= 10)
+GET   /flights 					controllers.Flights.index(page: Int ?= 0, pageSize: Int ?= models.Flight.DEFAULT_PAGE_SIZE)
 GET   /flights/new              controllers.Flights._new
 GET   /flights/:id              controllers.Flights.show(id: Long)
 GET   /flights/:id/edit			controllers.Flights.edit(id: Long)

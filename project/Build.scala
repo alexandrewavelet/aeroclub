@@ -11,6 +11,7 @@ object ApplicationBuild extends Build {
 	    javaCore,
 	    javaJdbc,
 	    javaEbean,
+      filters,
       "mysql" % "mysql-connector-java" % "5.1.21"
     )
 

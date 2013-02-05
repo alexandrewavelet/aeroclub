@@ -20,18 +20,24 @@
     
     <div class="pagination pagination-centered">
         <ul>
-            @if(flights.hasPrev) {
-                <li><a href="@routes.Flights.index(flights.getPageIndex - 1)">&larr; @Messages.get("views.previous")</a></li>
-            } else {
-                <li class="disabled"><a href="#">&larr; @Messages.get("views.previous")</a></li>
-            }            
+            @flights.hasPrev match {
+                case true => {
+                    <li><a href="@routes.Flights.index(flights.getPageIndex - 1)">&larr; @Messages.get("views.previous")</a></li>
+                }
+                case false => {
+                    <li class="disabled"><a href="#">&larr; @Messages.get("views.previous")</a></li>
+                }
+            }
             @for(page <- 0 to flights.getTotalPageCount - 1) {
                 <li @if(flights.getPageIndex == page) { class="active" } ><a href="@routes.Flights.index(page)">@(page + 1)</a></li>
             }
-            @if(flights.hasNext) {
-                <li><a href="@routes.Flights.index(flights.getPageIndex + 1)">@Messages.get("views.next") &rarr;</a></li>
-            } else {
-                <li class="disabled"><a href="#">@Messages.get("views.next") &rarr;</a></li>
+            @flights.hasNext match {
+                case true => {
+                    <li><a href="@routes.Flights.index(flights.getPageIndex + 1)">@Messages.get("views.next") &rarr;</a></li>
+                }
+                case false => {
+                    <li class="disabled"><a href="#">@Messages.get("views.next") &rarr;</a></li>
+                }
             }
         </ul>
     </div>
