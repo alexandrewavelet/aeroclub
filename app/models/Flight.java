@@ -9,6 +9,7 @@ import javax.persistence.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import play.i18n.*;
+import com.avaje.ebean.*;
 
 @Entity
 public class Flight extends Model {
@@ -41,6 +42,13 @@ public class Flight extends Model {
 	// missing instructor, person
 
 	public static Finder<Long, Flight> find = new Finder(Long.class, Flight.class);
+
+	public static Page<Flight> page(int page, int pageSize) {
+		return
+			find.where()
+				.findPagingList(pageSize)
+				.getPage(page);
+	}
 
 	public String toString() {
 		return Messages.get("models.flight.toString", id, new SimpleDateFormat("dd/MM/yyyy").format(date), duration);

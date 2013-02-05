@@ -1,4 +1,4 @@
-@(flights: List[Flight])
+@(flights: com.avaje.ebean.Page[Flight])
 
 @import helper._
 @import helper.twitterBootstrap._
@@ -16,8 +16,26 @@
         <input type="submit" value="@Messages.get("views.flights.index.add")" class="btn">
     }
 
-    <h2>@Messages.get("views.flights.index.subtitle", flights.size.toString)</h2>
+    <h2>@Messages.get("views.flights.index.subtitle", flights.getTotalRowCount.toString)</h2>
     
+    <div class="pagination pagination-centered">
+        <ul>
+            @if(flights.hasPrev) {
+                <li><a href="@routes.Flights.index(flights.getPageIndex - 1)">&larr; @Messages.get("views.previous")</a></li>
+            } else {
+                <li class="disabled"><a href="#">&larr; @Messages.get("views.previous")</a></li>
+            }            
+            @for(page <- 0 to flights.getTotalPageCount - 1) {
+                <li @if(flights.getPageIndex == page) { class="active" } ><a href="@routes.Flights.index(page)">@(page + 1)</a></li>
+            }
+            @if(flights.hasNext) {
+                <li><a href="@routes.Flights.index(flights.getPageIndex + 1)">@Messages.get("views.next") &rarr;</a></li>
+            } else {
+                <li class="disabled"><a href="#">@Messages.get("views.next") &rarr;</a></li>
+            }
+        </ul>
+    </div>
+
     <table class="table">
         <tr>
             <th>@Messages.get("views.flights.index.description")</th>
@@ -25,7 +43,7 @@
             <td></td>
             <td></td>
         </tr>
-    @for(flight <- flights) {
+    @for(flight <- flights.getList) {
         <tr>
             <td>@flight</td>
             <td>

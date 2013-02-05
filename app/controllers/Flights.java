@@ -10,11 +10,11 @@ import play.i18n.*;
 public class Flights extends Controller {
   
 	static Form<Flight> flightForm = Form.form(Flight.class);
-	static Result GO_HOME = redirect(routes.Flights.index());
+	static Result GO_HOME = redirect(routes.Flights.index(0, 10));
 
-	// GET /flights
-	public static Result index() {
-		return ok(index.render(Flight.find.all()));
+	// GET /flights?page=0&pageSize=10
+	public static Result index(int page, int pageSize) {
+		return ok(index.render(Flight.page(page, pageSize)));
 	}
 
 	// GET /flights/:id

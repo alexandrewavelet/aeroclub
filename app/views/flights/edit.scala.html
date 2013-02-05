@@ -25,7 +25,7 @@
         @checkbox(flightForm("initiationFee"),                  '_label -> Messages.get("views.flights.initiationFee"))
         
         <input type="submit" value="@Messages.get("views.flights.edit.submit")" class="btn">
-        <a href="@routes.Flights.index" class="btn btn-link">@Messages.get("views.back")</a>
+        <a href="@routes.Flights.index()" class="btn btn-link">@Messages.get("views.back")</a>
         
     }
 }

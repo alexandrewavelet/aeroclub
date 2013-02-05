@@ -31,6 +31,8 @@ views.edit=Edit
 views.delete=Delete
 views.none=None
 view.back=Back
+views.next=Next
+views.previous=Previous
 
 # --- Main
 views.main.flightsMenu=Flights management

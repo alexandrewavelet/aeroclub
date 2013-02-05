@@ -22,10 +22,10 @@ public class Application extends Controller {
 		return ok(index.render(loginForm));
 	}
 
-	// GET /:code
-	public static Result setLang(String code) {
+	// GET /:code?from=/
+	public static Result setLang(String code, String from) {
 		changeLang(code);
-		return redirect(routes.Application.index());
+		return redirect(from);
 	}
 
 	// POST /login

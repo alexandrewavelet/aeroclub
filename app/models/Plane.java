@@ -32,12 +32,12 @@ public class Plane extends Model {
 		return Messages.get("models.plane.toString", id, matriculation);
 	}
 
-	// Generate a list of options for a html select element
-    public static Map<String,String> options() {
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for (Plane plane : Plane.find.findList()) {
-            options.put(plane.id.toString(), plane.toString());
-        }
-        return options;
-    }
+	// Generates a list of options for a html select element
+	public static Map<String,String> options() {
+		LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
+		for (Plane plane : Plane.find.findList()) {
+			options.put(plane.id.toString(), plane.toString());
+		}
+		return options;
+	}
 }
