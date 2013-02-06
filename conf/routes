@@ -4,7 +4,7 @@
 
 # Home page
 GET    /                        controllers.Application.index
-GET    /lang/:code              controllers.Application.setLang(code: String, from: String)
+GET    /lang/:code              controllers.Application.setLang(code: String)
 
 # Authentication
 POST   /login 					controllers.Application.login
@@ -20,7 +20,7 @@ POST  /flight/:id        		controllers.Flights.update(id: Long)
 POST  /flight/:id/delete		controllers.Flights.delete(id: Long)
 
 # Planes
-GET   /planes     				controllers.Planes.index
+GET   /planes     				controllers.Planes.index(page: Int ?= 0, pageSize: Int ?= models.Plane.DEFAULT_PAGE_SIZE)
 GET   /planes/new              	controllers.Planes._new
 GET   /planes/:id              	controllers.Planes.show(id: Long)
 GET   /planes/:id/edit			controllers.Planes.edit(id: Long)

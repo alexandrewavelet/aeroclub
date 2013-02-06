@@ -33,6 +33,7 @@ views.none=None
 view.back=Back
 views.next=Next
 views.previous=Previous
+views.nbPerPages=Number per pages
 
 # --- Main
 views.main.flightsMenu=Flights management

@@ -3,6 +3,21 @@
 @import helper._
 @import helper.twitterBootstrap._
 @import play.i18n._
+@import models.Flight._
+
+@*************************************
+* Helper generating navigation links *
+*************************************@
+
+@getPageSize = @{
+    val queryString = request.queryString
+    if(queryString.containsKey("pageSize")) {
+        queryString.get("pageSize")(0).toInt.asInstanceOf[Int]
+    }
+    else {
+        DEFAULT_PAGE_SIZE.asInstanceOf[Int]
+    }
+}
 
 @main(Messages.get("views.flights.index.title")) {
     
@@ -22,18 +37,18 @@
         <ul>
             @flights.hasPrev match {
                 case true => {
-                    <li><a href="@routes.Flights.index(flights.getPageIndex - 1)">&larr; @Messages.get("views.previous")</a></li>
+                    <li><a href="@routes.Flights.index(flights.getPageIndex - 1, getPageSize)">&larr; @Messages.get("views.previous")</a></li>
                 }
                 case false => {
                     <li class="disabled"><a href="#">&larr; @Messages.get("views.previous")</a></li>
                 }
             }
             @for(page <- 0 to flights.getTotalPageCount - 1) {
-                <li @if(flights.getPageIndex == page) { class="active" } ><a href="@routes.Flights.index(page)">@(page + 1)</a></li>
+                <li @if(flights.getPageIndex == page) { class="active" } ><a href="@routes.Flights.index(page, getPageSize)">@(page + 1)</a></li>
             }
             @flights.hasNext match {
                 case true => {
-                    <li><a href="@routes.Flights.index(flights.getPageIndex + 1)">@Messages.get("views.next") &rarr;</a></li>
+                    <li><a href="@routes.Flights.index(flights.getPageIndex + 1, getPageSize)">@Messages.get("views.next") &rarr;</a></li>
                 }
                 case false => {
                     <li class="disabled"><a href="#">@Messages.get("views.next") &rarr;</a></li>
@@ -45,9 +60,19 @@
     <table class="table">
         <tr>
             <th>@Messages.get("views.flights.index.description")</th>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="3">    
+                <div class="btn-group pull-right">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                        @Messages.get("views.nbPerPages")
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu pagination-centered">
+                        @for(value: Int <- Array(10, 25, 50, 100)) {
+                            <li><a href="@routes.Flights.index(0, value)">@if(getPageSize == value) { <i class="icon-ok"></i> } @value</a></li>
+                        }
+                    </ul>
+                </div>
+            </td>
         </tr>
     @for(flight <- flights.getList) {
         <tr>

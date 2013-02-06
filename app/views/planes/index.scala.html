@@ -1,8 +1,23 @@
-@(planes: List[Plane])
+@(planes: com.avaje.ebean.Page[Plane])
 
 @import helper._
 @import helper.twitterBootstrap._
 @import play.i18n._
+@import models.Plane._
+
+@*************************************
+* Helper generating navigation links *
+*************************************@
+
+@getPageSize = @{
+    val queryString = request.queryString
+    if(queryString.containsKey("pageSize")) {
+        queryString.get("pageSize")(0).toInt.asInstanceOf[Int]
+    }
+    else {
+        DEFAULT_PAGE_SIZE.asInstanceOf[Int]
+    }
+}
 
 @main(Messages.get("views.planes.index.title")) {
     
@@ -16,16 +31,26 @@
         <input type="submit" value="@Messages.get("views.planes.index.add")" class="btn">
     }
 
-    <h2>@Messages.get("views.planes.index.subtitle", planes.size.toString)</h2>
+    <h2>@Messages.get("views.planes.index.subtitle", planes.getTotalRowCount.toString)</h2>
     
     <table class="table">
         <tr>
             <th>@Messages.get("views.planes.index.description")</th>
-            <td></td>
-            <td></td>
-            <td></td>
+             <td colspan="3">    
+                <div class="btn-group pull-right">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                        @Messages.get("views.nbPerPages")
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu pagination-centered">
+                        @for(value: Int <- Array(10, 25, 50, 100)) {
+                            <li><a href="@routes.Planes.index(0, value)">@if(getPageSize == value) { <i class="icon-ok"></i> } @value</a></li>
+                        }
+                    </ul>
+                </div>
+            </td>
         </tr>
-    @for(plane <- planes) {
+    @for(plane <- planes.getList) {
         <tr>
             <td>@plane</td>
             <td>

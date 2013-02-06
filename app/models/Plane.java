@@ -7,6 +7,7 @@ import play.data.format.Formats.*;
 import play.data.validation.Constraints.*;
 import javax.persistence.*;
 import play.i18n.*;
+import com.avaje.ebean.*;
 
 @Entity
 public class Plane extends Model {
@@ -29,6 +30,13 @@ public class Plane extends Model {
 	public final static Integer DEFAULT_PAGE_SIZE = 10;
 	
 	public static Finder<Long, Plane> find = new Finder(Long.class, Plane.class);
+
+	public static Page<Plane> page(int page, int pageSize) {
+		return
+			find.where()
+				.findPagingList(pageSize)
+				.getPage(page);
+	}
 
 	public String toString() {
 		return Messages.get("models.plane.toString", id, matriculation);

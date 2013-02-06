@@ -33,6 +33,7 @@ views.none=Aucun
 views.back=Retour
 views.next=Suivant
 views.previous=Précédent
+views.nbPerPages=Nombre par pages
 
 # --- Main
 views.main.flightsMenu=Gestion des vols
@@ -65,8 +66,8 @@ views.planes.index.add=Ajouter un nouvel avion
 views.planes.index.subtitle=Liste des avions : {0} avion(s)
 views.planes.index.description=Descriptif
 
-views.planes.show.title=Détail d''un avion
-views.planes.show.subtitle=Détail de l''avion n°{0}
+views.planes.show.title=Détails d''un avion
+views.planes.show.subtitle=Détails de l''avion n°{0}
 views.planes.show.flights=Vols en cours
 
 # --- Flights
@@ -91,8 +92,8 @@ views.flights.index.add=Ajouter un nouveau vol
 views.flights.index.subtitle=Liste des vols : {0} vols(s)
 views.flights.index.description=Descriptif
 
-views.flights.show.title=Détail d''une séquence de vol
-views.flights.show.subtitle=Détail de la séquence de vol n°{0}
+views.flights.show.title=Détails d''une séquence de vol
+views.flights.show.subtitle=Détails de la séquence de vol n°{0}
 views.flights.show.plane=Avion utilisé
 
 # --- Models messages

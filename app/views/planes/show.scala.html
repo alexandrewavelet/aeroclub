@@ -25,6 +25,6 @@
     	<li> @flight </li>
     }
     </ul>
-    <a href="@routes.Planes.index" class="btn btn-link">@Messages.get("views.back")</a>
+    <a href="@request.getHeader("Referer")" class="btn btn-link">@Messages.get("views.back")</a>
 
 }
