@@ -27,8 +27,6 @@ public class Plane extends Model {
 	@OneToMany
 	public List<Flight> flights;
 
-	public final static Integer DEFAULT_PAGE_SIZE = 10;
-	
 	public static Finder<Long, Plane> find = new Finder(Long.class, Plane.class);
 
 	public static Page<Plane> page(int page, int pageSize) {

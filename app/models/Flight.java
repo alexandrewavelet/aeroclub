@@ -39,8 +39,6 @@ public class Flight extends Model {
 
 	public Boolean initiationFee = false;
 
-	public final static Integer DEFAULT_PAGE_SIZE = 10;
-
 	public static Finder<Long, Flight> find = new Finder(Long.class, Flight.class);
 
 	public static Page<Flight> page(int page, int pageSize) {

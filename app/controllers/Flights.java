@@ -10,7 +10,7 @@ import play.i18n.*;
 public class Flights extends Controller {
   
 	static Form<Flight> flightForm = Form.form(Flight.class);
-	static Result GO_HOME = redirect(routes.Flights.index(0, Flight.DEFAULT_PAGE_SIZE));
+	static Result GO_HOME = redirect(routes.Flights.index(0, 10));
 
 	// GET /flights?page=0&pageSize=10
 	public static Result index(int page, int pageSize) {

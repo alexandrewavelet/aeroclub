@@ -1,0 +1,41 @@
+@(page: com.avaje.ebean.Page[_], route: (Int, Int) => play.api.mvc.Call)
+
+@*******************************
+* Helper generating pagination *
+*******************************@
+
+@import play.i18n._
+
+@getPageSize = @{
+    val queryString = request.queryString
+    if(queryString.containsKey("pageSize")) {
+        queryString.get("pageSize")(0).toInt.asInstanceOf[Int]
+    }
+    else {
+        10.asInstanceOf[Int]
+    }
+}
+
+<div class="pagination pagination-centered">
+    <ul>
+        @page.hasPrev match {
+            case true => {
+                <li><a href="@route(page.getPageIndex - 1, getPageSize)">&larr; @Messages.get("views.previous")</a></li>
+            }
+            case false => {
+                <li class="disabled"><a href="#">&larr; @Messages.get("views.previous")</a></li>
+            }
+        }
+        @for(index <- 0 to page.getTotalPageCount - 1) {
+            <li @if(page.getPageIndex == index) { class="active" } ><a href="@route(index, getPageSize)">@(index + 1)</a></li>
+        }
+        @page.hasNext match {
+            case true => {
+                <li><a href="@route(page.getPageIndex + 1, getPageSize)">@Messages.get("views.next") &rarr;</a></li>
+            }
+            case false => {
+                <li class="disabled"><a href="#">@Messages.get("views.next") &rarr;</a></li>
+            }
+        }
+    </ul>
+</div>
