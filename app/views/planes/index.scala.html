@@ -32,6 +32,30 @@
     }
 
     <h2>@Messages.get("views.planes.index.subtitle", planes.getTotalRowCount.toString)</h2>
+
+    <div class="pagination pagination-centered">
+        <ul>
+            @planes.hasPrev match {
+                case true => {
+                    <li><a href="@routes.Planes.index(planes.getPageIndex - 1, getPageSize)">&larr; @Messages.get("views.previous")</a></li>
+                }
+                case false => {
+                    <li class="disabled"><a href="#">&larr; @Messages.get("views.previous")</a></li>
+                }
+            }
+            @for(page <- 0 to planes.getTotalPageCount - 1) {
+                <li @if(planes.getPageIndex == page) { class="active" } ><a href="@routes.Planes.index(page, getPageSize)">@(page + 1)</a></li>
+            }
+            @planes.hasNext match {
+                case true => {
+                    <li><a href="@routes.Planes.index(planes.getPageIndex + 1, getPageSize)">@Messages.get("views.next") &rarr;</a></li>
+                }
+                case false => {
+                    <li class="disabled"><a href="#">@Messages.get("views.next") &rarr;</a></li>
+                }
+            }
+        </ul>
+    </div>
     
     <table class="table">
         <tr>
