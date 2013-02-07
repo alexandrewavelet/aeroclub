@@ -5,6 +5,7 @@ import play.mvc.*;
 import play.data.*;
 import views.html.*;
 import play.i18n.*;
+import models.User;
 
 public class Application extends Controller {
   	
@@ -12,7 +13,13 @@ public class Application extends Controller {
 
   		public String username;
   		public String password;
-  		
+ 
+	   public String validate() {
+	        if(User.authenticate(username, password) == null) {
+	            return Messages.get("controllers.application.loginError");
+	        }
+	        return null;
+	    }
   	}
 
   	static Form<Login> loginForm = Form.form(Login.class);
@@ -32,10 +39,10 @@ public class Application extends Controller {
 	public static Result login() {
 		Form<Login> filledForm = loginForm.bindFromRequest();
 		if (filledForm.hasErrors()) {
-			flash("error", Messages.get("controllers.error"));
 			return badRequest(index.render(filledForm));
 		}
 		else {
+			//session("userId", filledForm.get().email);
 			flash("success", Messages.get("controllers.application.login"));
 			return redirect(routes.Application.index());
 		}
@@ -43,6 +50,7 @@ public class Application extends Controller {
 
 	// GET /logout
 	public static Result logout() {
+		session().clear();
 		flash("success", Messages.get("controllers.application.logout"));
 		return redirect(routes.Application.index());
 	}

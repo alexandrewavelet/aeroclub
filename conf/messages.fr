@@ -108,6 +108,7 @@ controllers.createSuccess={0} a été correctement créé
 
 controllers.application.logout=Vous avez été déconnecté avec succès
 controllers.application.login=Vous avez été connecté avec succès
+controllers.application.loginError=Nom d''utilisateur ou mot de passe invalide
 
 controllers.flights.deleteSuccess=Le vol a été correctement supprimé
 

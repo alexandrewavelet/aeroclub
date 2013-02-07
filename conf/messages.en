@@ -108,6 +108,7 @@ controllers.createSuccess={0} has been successfully created
 
 controllers.application.logout=You have been successfully logged out
 controllers.application.login=You have been logged successfully
+controllers.application.loginError=Invalid username or password 
 
 controllers.flights.deleteSuccess=The flight has been successfully removed
 

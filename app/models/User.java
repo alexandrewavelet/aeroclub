@@ -14,14 +14,26 @@ public class User extends Model {
 	public Long id;
 
 	@Required
-	public String login;
+	public String username;
 
 	@Required
 	public String password;
 
+	@Required
+	@Email
+	public String email;
+
 	public static Finder<Long, User> find = new Finder(Long.class, User.class);
 
+    public static User authenticate(String username, String password) {
+        return 
+        	find.where()
+            .eq("username", username)
+            .eq("password", password)
+            .findUnique();
+    }
+    
 	public String toString() {
-		return Messages.get("models.user.toString", id, login);
+		return Messages.get("models.user.toString", id, username);
 	}
 }
