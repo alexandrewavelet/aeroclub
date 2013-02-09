@@ -26,25 +26,30 @@ public class Application extends Controller {
 
   	// GET /
 	public static Result index() {
-		return ok(index.render(loginForm));
+		return ok(index.render());
 	}
 
-	// GET /:code
+	// GET /lang/:code
 	public static Result setLang(String code) {
 		changeLang(code);
 		return redirect(request().getHeader("Referer"));
 	}
 
-	// POST /login
+	// GET /login
 	public static Result login() {
+		return ok(login.render(loginForm));
+	}
+
+	// POST /login
+	public static Result authenticate() {
 		Form<Login> filledForm = loginForm.bindFromRequest();
 		if (filledForm.hasErrors()) {
-			return badRequest(index.render(filledForm));
+			return badRequest(login.render(filledForm));
 		}
 		else {
-			//session("userId", filledForm.get().email);
+			session("user", filledForm.get().username);
 			flash("success", Messages.get("controllers.application.login"));
-			return redirect(routes.Application.index());
+			return redirect(routes.Application.login());
 		}
 	}
 
@@ -52,6 +57,6 @@ public class Application extends Controller {
 	public static Result logout() {
 		session().clear();
 		flash("success", Messages.get("controllers.application.logout"));
-		return redirect(routes.Application.index());
+		return redirect(routes.Application.login());
 	}
 }

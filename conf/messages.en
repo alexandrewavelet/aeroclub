@@ -43,10 +43,14 @@ views.main.switchLanguage=Switch language
 # --- Index
 views.index.title=Aeroclub homepage
 views.index.welcome.message=Welcome to the aeroclub application
-views.index.connect.me=Sign in
-views.index.connection=Connection
-views.index.username=Username
-views.index.password=Password
+views.index.connection=You must sign in to continue
+
+# --- Login
+views.login.title=Connecting to the application
+views.login.subtitle=Sign in
+views.login.username=Username
+views.login.password=Password
+views.login.connect.me=Sign in
 
 # --- Planes
 views.planes.matriculation=Matriculation

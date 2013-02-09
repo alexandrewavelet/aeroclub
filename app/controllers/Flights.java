@@ -7,6 +7,7 @@ import views.html.flights.*;
 import models.Flight;
 import play.i18n.*;
 
+@Security.Authenticated(Secured.class)
 public class Flights extends Controller {
   
 	static Form<Flight> flightForm = Form.form(Flight.class);
