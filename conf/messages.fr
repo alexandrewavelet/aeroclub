@@ -41,6 +41,7 @@ views.main.planes=Avions
 views.main.planeTypesMenu=Gestion des types d''avions
 views.main.planesMenu=Gestion des avions
 views.main.switchLanguage=Changer de langue
+views.main.logout=Déconnexion
 
 # --- Index
 views.index.title=Page d''accueil aeroclub

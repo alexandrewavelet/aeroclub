@@ -41,6 +41,7 @@ views.main.planes=Planes
 views.main.planeTypesMenu=Plane types management
 views.main.planesMenu=Planes management
 views.main.switchLanguage=Switch language
+views.main.logout=Logout
 
 # --- Index
 views.index.title=Aeroclub homepage
