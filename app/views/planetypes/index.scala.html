@@ -14,7 +14,7 @@
     }
 }
 
-@main(Messages.get("views.planes.index.title")) {
+@main(Messages.get("views.planetype.index.title")) {
     
     @if(flash.containsKey("success")) {
         <div class="alert alert-success">
@@ -24,16 +24,16 @@
     }
 
     @form(routes.PlaneTypes._new) {
-        <input type="submit" value="@Messages.get("views.planes.index.add")" class="btn">
+        <input type="submit" value="@Messages.get("views.planetypes.index.add")" class="btn">
     }
 
-    <h2>@Messages.get("views.plane.index.subtitle", planeTypes.getTotalRowCount.toString)</h2>
+    <h2>@Messages.get("views.planetypes.index.subtitle", planeTypes.getTotalRowCount.toString)</h2>
 
     @pagination(planeTypes, routes.PlaneTypes.index _)
 
     <table class="table">
         <tr>
-            <th>@Messages.get("views.planes.index.description")</th>
+            <th>@Messages.get("views.planetypes.index.description")</th>
              <td colspan="3">    
                 <div class="btn-group pull-right">
                     <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
