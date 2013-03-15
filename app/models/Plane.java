@@ -27,6 +27,9 @@ public class Plane extends Model {
 	@OneToMany
 	public List<Flight> flights;
 
+	@ManyToOne
+	public Planetype planetype;
+
 	public static Finder<Long, Plane> find = new Finder(Long.class, Plane.class);
 
 	public static Page<Plane> page(int page, int pageSize) {
