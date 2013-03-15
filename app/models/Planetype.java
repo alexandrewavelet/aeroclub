@@ -10,8 +10,7 @@ import play.i18n.*;
 import com.avaje.ebean.*;
 
 @Entity
-public class Planetype extends Model {
-	
+public class PlaneType extends Model {
 
 	@Id
 	public Long id;
@@ -41,8 +40,14 @@ public class Planetype extends Model {
 	public int fee_time3;
 
 
-	public static Finder<Long, Planetype> find = new Finder(Long.class, Planetype.class);
+	public static Finder<Long, PlaneType> find = new Finder(Long.class, PlaneType.class);
 
+	public static Page<PlaneType> page(int page, int pageSize) {
+		return
+			find.where()
+				.findPagingList(pageSize)
+				.getPage(page);
+	}
 
 	public String toString() {
 		return Messages.get("models.planetype.toString", id, description);
@@ -51,7 +56,7 @@ public class Planetype extends Model {
 	// Generates a list of options for a html select element
 	public static Map<String,String> options() {
 		LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-		for (Planetype planetypes : Planetype.find.findList()) {
+		for (PlaneType planetypes : PlaneType.find.findList()) {
 			options.put(planetypes.id.toString(), planetypes.description.toString());
 		}
 		return options;

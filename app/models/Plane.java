@@ -29,7 +29,7 @@ public class Plane extends Model {
 
 	@ManyToOne
 	@Required
-	public Planetype planetype;
+	public PlaneType planeType;
 
 	public static Finder<Long, Plane> find = new Finder(Long.class, Plane.class);
 

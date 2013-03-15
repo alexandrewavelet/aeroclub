@@ -37,6 +37,8 @@ views.nbPerPages=Number per pages
 
 # --- Main
 views.main.flightsMenu=Flights management
+views.main.planes=Planes
+views.main.planeTypesMenu=Plane types management
 views.main.planesMenu=Planes management
 views.main.switchLanguage=Switch language
 
