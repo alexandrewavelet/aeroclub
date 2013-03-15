@@ -39,6 +39,7 @@ views.nbPerPages=Number per pages
 views.main.flightsMenu=Flights management
 views.main.planesMenu=Planes management
 views.main.switchLanguage=Switch language
+views.main.logout=Logout
 
 # --- Index
 views.index.title=Aeroclub homepage

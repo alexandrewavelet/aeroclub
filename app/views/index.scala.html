@@ -6,6 +6,7 @@
     
     <h2>@Messages.get("views.index.welcome.message")</h2>
 
-    <a href="@routes.Application.login">@Messages.get("views.index.connection")</a>
-
+    @if(!session.contains("user")) {
+    	<a href="@routes.Application.login">@Messages.get("views.index.connection")</a>
+    }
 }

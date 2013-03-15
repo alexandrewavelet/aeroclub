@@ -40,7 +40,16 @@
                             <li><a href="@routes.Application.setLang("en")">@if(request.cookie("PLAY_LANG") != null && request.cookie("PLAY_LANG").value == "en" || lang.code == "en") { <i class="icon-ok"></i> } English</a></li>
                         </ul>
                     </li>
-	            </ul>
+                </ul>
+                @if(session.contains("user")) {
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> @session.get("user")</a>
+                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@routes.Application.logout"><i class="icon-hand-right"></i> @Messages.get("views.main.logout")</a></li>
+                        </ul>
+                    </div>
+                }
 	          </div>
 	        </div>
 	      </div>

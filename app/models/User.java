@@ -26,11 +26,12 @@ public class User extends Model {
 	public static Finder<Long, User> find = new Finder(Long.class, User.class);
 
     public static User authenticate(String username, String password) {
+    	play.Logger.info(username);
         return 
         	find.where()
-            .eq("username", username)
-            .eq("password", password)
-            .findUnique();
+            	.eq("username", username)
+            	.eq("password", password)
+            	.findUnique();
     }
     
 	public String toString() {

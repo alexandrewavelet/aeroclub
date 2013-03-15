@@ -39,6 +39,7 @@ views.nbPerPages=Nombre par pages
 views.main.flightsMenu=Gestion des vols
 views.main.planesMenu=Gestion des avions
 views.main.switchLanguage=Changer de langue
+views.main.logout=Déconnexion
 
 # --- Index
 views.index.title=Page d''accueil aeroclub

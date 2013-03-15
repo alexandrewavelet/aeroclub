@@ -8,23 +8,23 @@ import play.i18n.*;
 import models.User;
 
 public class Application extends Controller {
-  	
-  	public static class Login {
+	
+	public static class Login {
 
-  		public String username;
-  		public String password;
+		public String username;
+		public String password;
  
-	   public String validate() {
-	        if(User.authenticate(username, password) == null) {
-	            return Messages.get("controllers.application.loginError");
-	        }
-	        return null;
-	    }
-  	}
+   		public String validate() {
+			if (User.authenticate(username, password) == null) {
+				return Messages.get("controllers.application.loginError");
+			}
+			return null;
+		}
+	}
 
-  	static Form<Login> loginForm = Form.form(Login.class);
+	static Form<Login> loginForm = Form.form(Login.class);
 
-  	// GET /
+	// GET /
 	public static Result index() {
 		return ok(index.render());
 	}
