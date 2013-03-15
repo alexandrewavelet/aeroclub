@@ -44,7 +44,16 @@ public class Planetype extends Model {
 	public static Finder<Long, Planetype> find = new Finder(Long.class, Planetype.class);
 
 
-	/*public String toString() {
-		return Messages.get("models.flight.toString", id, new SimpleDateFormat("dd/MM/yyyy").format(date), duration);
-	}*/
+	public String toString() {
+		return Messages.get("models.planetype.toString", id, description);
+	}
+
+	// Generates a list of options for a html select element
+	public static Map<String,String> options() {
+		LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
+		for (Planetype planetypes : Planetype.find.findList()) {
+			options.put(planetypes.id.toString(), planetypes.description.toString());
+		}
+		return options;
+	}
 }

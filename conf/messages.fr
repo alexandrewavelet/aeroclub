@@ -56,6 +56,7 @@ views.login.connect.me=Se connecter
 views.planes.matriculation=Immatriculation
 views.planes.price=Prix
 views.planes.weekReduction=Réduction semaine
+views.planetype.planetype=Type d'avion
 
 views.planes.new.title=Ajouter un avion
 views.planes.new.subtitle=Saisie d''un nouvel avion
@@ -104,6 +105,7 @@ views.flights.show.plane=Avion utilisé
 models.plane.toString=Avion n°{0} immatriculé {1}
 models.user.toString=Utilisateur n°{0} : {1}
 models.flight.toString=Vol n°{0} du {1} d''une durée de {2} heure(s)
+models.planetype.toString=Type n°{0} {1}
 
 # --- Controllers messages
 controllers.error=Une erreur est survenue

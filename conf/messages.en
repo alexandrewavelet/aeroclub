@@ -56,6 +56,7 @@ views.login.connect.me=Sign in
 views.planes.matriculation=Matriculation
 views.planes.price=Price
 views.planes.weekReduction=Week reduction
+views.planetype.planetype=Plane type
 
 views.planes.new.title=Add a plane
 views.planes.new.subtitle=Entering a new plane
@@ -104,6 +105,7 @@ views.flights.show.plane=Used plane
 models.plane.toString=Plane n°{0} registered {1}
 models.user.toString=User n°{0} : {1}
 models.flight.toString=Flight n°{0} on {1} with a duration of {2} hour(s)
+models.planetype.toString=Type n°{0} {1}
 
 # --- Controllers messages
 controllers.error=An error has occured
