@@ -12,6 +12,7 @@ POST   /login                   controllers.Application.authenticate
 GET    /logout                  controllers.Application.logout
 
 # Flights
+GET   /flights.json             controllers.Flights.toJson
 GET   /flights                  controllers.Flights.index(page: Int ?= 0, pageSize: Int ?= 10)
 GET   /flights/new              controllers.Flights._new
 GET   /flight/:id               controllers.Flights.show(id: Long)

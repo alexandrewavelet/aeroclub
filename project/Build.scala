@@ -12,7 +12,8 @@ object ApplicationBuild extends Build {
 	    javaJdbc,
 	    javaEbean,
       filters,
-      "mysql" % "mysql-connector-java" % "5.1.21"
+      "mysql" % "mysql-connector-java" % "5.1.21",
+      "net.sf.flexjson" % "flexjson" % "2.1"
     )
 
     val main = play.Project(appName, appVersion, appDependencies).settings(
