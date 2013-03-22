@@ -12,7 +12,7 @@ POST   /login                   controllers.Application.authenticate
 GET    /logout                  controllers.Application.logout
 
 # Flights
-GET   /flights.json             controllers.Flights.toJson
+GET   /flights.json             controllers.Flights.indexJson
 GET   /flights                  controllers.Flights.index(page: Int ?= 0, pageSize: Int ?= 10)
 GET   /flights/new              controllers.Flights._new
 GET   /flight/:id               controllers.Flights.show(id: Long)
@@ -22,6 +22,7 @@ POST  /flight/:id               controllers.Flights.update(id: Long)
 POST  /flight/:id/delete        controllers.Flights.delete(id: Long)
 
 # Planes
+GET   /planes.json              controllers.Planes.indexJson
 GET   /planes                   controllers.Planes.index(page: Int ?= 0, pageSize: Int ?= 10)
 GET   /planes/new               controllers.Planes._new
 GET   /plane/:id                controllers.Planes.show(id: Long)
@@ -29,6 +30,10 @@ GET   /plane/:id/edit           controllers.Planes.edit(id: Long)
 POST  /planes                   controllers.Planes.create
 POST  /plane/:id                controllers.Planes.update(id: Long)
 POST  /plane/:id/delete         controllers.Planes.delete(id: Long)
+
+# Users
+GET   /user/edit                controllers.Users.edit
+POST  /user                     controllers.Users.update
 
 # Map static resources from the /public folder to the /assets URL path
 GET    /assets/*file            controllers.Assets.at(path="/public", file)

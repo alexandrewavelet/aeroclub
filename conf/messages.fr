@@ -40,6 +40,7 @@ views.main.flightsMenu=Gestion des vols
 views.main.planesMenu=Gestion des avions
 views.main.switchLanguage=Changer de langue
 views.main.logout=Déconnexion
+views.main.editProfile=Editer profil
 
 # --- Index
 views.index.title=Page d''accueil aeroclub
@@ -100,6 +101,13 @@ views.flights.index.description=Descriptif
 views.flights.show.title=Détails d''une séquence de vol
 views.flights.show.subtitle=Détails de la séquence de vol n°{0}
 views.flights.show.plane=Avion utilisé
+
+# --- Users
+views.users.edit.title=Modifier votre profil
+views.users.edit.subtitle=Modification du profil
+views.users.email=E-mail
+views.users.password=Mot de passe
+views.users.edit.submit=Modifier votre profil
 
 # --- Models messages
 models.plane.toString=Avion n°{0} immatriculé {1}

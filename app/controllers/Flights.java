@@ -17,8 +17,8 @@ public class Flights extends Controller {
 	static Result GO_HOME = redirect(routes.Flights.index(0, 10));
 
 	// GET /flights.json
-	public static Result toJson() {
-		return ok(new JSONSerializer().exclude("plane").exclude("class").serialize(Flight.find.all()));
+	public static Result indexJson() {
+		return ok(new JSONSerializer().exclude("class").serialize(Flight.find.all()));
 	}
 
 	// GET /flights?page=0&pageSize=10

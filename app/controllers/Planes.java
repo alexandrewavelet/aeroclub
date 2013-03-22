@@ -6,12 +6,18 @@ import play.data.*;
 import views.html.planes.*;
 import models.Plane;
 import play.i18n.*;
+import flexjson.JSONSerializer;
 
 @Security.Authenticated(Secured.class)
 public class Planes extends Controller {
   
 	static Form<Plane> planeForm = Form.form(Plane.class);
 	static Result GO_HOME = redirect(routes.Planes.index(0, 10));
+
+	// GET /planes.json
+	public static Result indexJson() {
+		return ok(new JSONSerializer().exclude("flights").exclude("class").serialize(Plane.find.all()));
+	}
 
 	// GET /planes?page=0&pageSize=10
 	public static Result index(int page, int pageSize) {

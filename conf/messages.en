@@ -40,6 +40,7 @@ views.main.flightsMenu=Flights management
 views.main.planesMenu=Planes management
 views.main.switchLanguage=Switch language
 views.main.logout=Logout
+views.main.editProfile=Edit profile
 
 # --- Index
 views.index.title=Aeroclub homepage

@@ -37,7 +37,12 @@ public class Application extends Controller {
 
 	// GET /login
 	public static Result login() {
-		return ok(login.render(loginForm));
+		if (session().get("user") != null) {
+			return redirect(routes.Application.index());
+		}
+		else {
+			return ok(login.render(loginForm));
+		}
 	}
 
 	// POST /login
