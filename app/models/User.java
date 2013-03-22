@@ -14,7 +14,6 @@ public class User extends Model {
 	@Id
 	public Long id;
 
-
 	@Column(unique=true)
 	public String username;
 
@@ -25,6 +24,13 @@ public class User extends Model {
 	@Required
 	@Email
 	public String email;
+
+	public User(Long id, String username, String password, String email) {
+		this.id       = id;
+		this.username = username;
+		this.password = password;
+		this.email    = email;
+	}
 
 	public static Finder<Long, User> find = new Finder(Long.class, User.class);
 
