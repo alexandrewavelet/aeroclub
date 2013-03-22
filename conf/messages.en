@@ -131,6 +131,13 @@ views.flights.show.title=Details of a flight sequence
 views.flights.show.subtitle=Details of flight sequence n°{0}
 views.flights.show.plane=Used plane
 
+# --- Users
+views.users.edit.title=Edit your profil
+views.users.edit.subtitle=Edit your profil
+views.users.email=Email
+views.users.password=Password
+views.users.edit.submit=Edit
+
 # --- Models messages
 models.plane.toString=Plane n°{0} registered {1}
 models.user.toString=User n°{0} : {1}
