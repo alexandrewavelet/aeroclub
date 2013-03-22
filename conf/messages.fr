@@ -135,6 +135,7 @@ models.plane.toString=Avion n°{0} immatriculé {1}
 models.user.toString=Utilisateur n°{0} : {1}
 models.flight.toString=Vol n°{0} du {1} d''une durée de {2} heure(s)
 models.planetype.toString=Type n°{0} {1}
+models.account.toString=Le montant actuel du compte est de {0} Euros, il reste {1} heure(s) sur le forfait 1, {2} sur le forfait 2 et {3} sur le forfait 3
 
 # --- Controllers messages
 controllers.error=Une erreur est survenue

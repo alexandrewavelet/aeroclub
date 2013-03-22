@@ -135,6 +135,7 @@ models.plane.toString=Plane n°{0} registered {1}
 models.user.toString=User n°{0} : {1}
 models.flight.toString=Flight n°{0} on {1} with a duration of {2} hour(s)
 models.planetype.toString=Type n°{0} {1}
+models.account.toString=The current account balance is {0} Euros, and there is {1} hour(s) remaining for the first fee, {2} for the second and {3} for the third.
 
 # --- Controllers messages
 controllers.error=An error has occured
