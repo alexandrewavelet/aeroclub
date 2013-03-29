@@ -1,3 +1,5 @@
+@(loginForm: Form[Application.Login])
+
 @import helper._
 @import helper.twitterBootstrap._
 @import play.i18n._
@@ -7,6 +9,16 @@
     <h2>@Messages.get("views.index.welcome.message")</h2>
 
     @if(!session.contains("user")) {
-    	<a href="@routes.Application.login">@Messages.get("views.index.connection")</a>
+    
+	    <div id="message"></div>
+
+	    @form(routes.Application.authenticate, 'id -> "login") {
+	        
+	        @inputText(loginForm("username"),     '_label -> Messages.get("views.index.username"))
+	        @inputPassword(loginForm("password"), '_label -> Messages.get("views.index.password"))
+	        
+	        <input type="submit" value="@Messages.get("views.index.connect.me")" class="btn primary">
+	        
+	    }
     }
 }

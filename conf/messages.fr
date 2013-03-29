@@ -47,14 +47,9 @@ views.main.editProfile=Editer profil
 # --- Index
 views.index.title=Page d''accueil aeroclub
 views.index.welcome.message=Bienvenue sur l''application de l''aeroclub
-views.index.connection=Vous devez vous connecter pour continuer
-
-# --- Login
-views.login.title=Connexion à l''application
-views.login.subtitle=Se connecter
-views.login.username=Nom d''utilisateur
-views.login.password=Mot de passe
-views.login.connect.me=Se connecter
+views.index.username=Nom d''utilisateur
+views.index.password=Mot de passe
+views.index.connect.me=Se connecter
 
 # --- Planes
 views.planes.matriculation=Immatriculation

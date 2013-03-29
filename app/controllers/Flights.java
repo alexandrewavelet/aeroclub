@@ -8,9 +8,7 @@ import models.Flight;
 import play.i18n.*;
 import flexjson.JSONSerializer;
 
-//import static play.libs.Json.toJson;
-
-@Security.Authenticated(Secured.class)
+//@Security.Authenticated(Secured.class)
 public class Flights extends Controller {
   
 	static Form<Flight> flightForm = Form.form(Flight.class);
