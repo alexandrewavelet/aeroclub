@@ -50,6 +50,8 @@ views.index.welcome.message=Bienvenue sur l''application de l''aeroclub
 views.index.username=Nom d''utilisateur
 views.index.password=Mot de passe
 views.index.connect.me=Se connecter
+views.index.login.error1=Login ou mot de passe non renseigné
+views.index.login.error2=Oups la connexion a échouée !
 
 # --- Planes
 views.planes.matriculation=Immatriculation

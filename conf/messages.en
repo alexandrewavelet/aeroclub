@@ -50,6 +50,8 @@ views.index.welcome.message=Welcome to the aeroclub application
 views.index.username=Username
 views.index.password=Password
 views.index.connect.me=Sign in
+views.index.login.error1=Missing username or password
+views.index.login.error2=Oops connection has failed !
 
 # --- Planes
 views.planes.matriculation=Matriculation

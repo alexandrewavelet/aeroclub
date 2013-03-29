@@ -8,7 +8,7 @@ import play.i18n.*;
 import models.User;
 import play.libs.Json;
 import org.codehaus.jackson.node.ObjectNode;
-import java.util.Map;
+import java.util.*;
 
 public class Application extends Controller {
 	
@@ -63,12 +63,23 @@ public class Application extends Controller {
 		return redirect(routes.Application.index());
 	}
 
+	// GET /getI18nMessages
+	@BodyParser.Of(BodyParser.Json.class)
+	public static Result getI18nMessages(String keys) {
+		ObjectNode result = Json.newObject();
+		for (String key : keys.split(",")) {
+			result.put(key, Messages.get(key));
+		}
+		return ok(result);
+	}
+
 	// Javascript routes
    	public static Result javascriptRoutes() {
     	response().setContentType("text/javascript");
         return ok(
             Routes.javascriptRouter("jsRoutes",
-                controllers.routes.javascript.Application.authenticate()
+                controllers.routes.javascript.Application.authenticate(),
+                controllers.routes.javascript.Application.getI18nMessages()
             )
         );
     }
