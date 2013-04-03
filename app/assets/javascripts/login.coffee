@@ -1,7 +1,6 @@
 $ ->
   jsRoutes.controllers.Application.getI18nMessages('views.index.login.error1,views.index.login.error2').ajax
     success: (messages) ->
-      console.log messages
       $('#login').submit (e) ->
         do e.preventDefault
 
