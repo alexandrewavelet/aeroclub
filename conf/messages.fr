@@ -44,6 +44,10 @@ views.main.switchLanguage=Changer de langue
 views.main.logout=Déconnexion
 views.main.editProfile=Editer profil
 
+#--- NotFound
+views.notFound.title=Erreur 404 : Page non trouvé
+views.notFound.message=Chemin {0} non trouvée
+
 # --- Index
 views.index.title=Page d''accueil aeroclub
 views.index.welcome.message=Bienvenue sur l''application de l''aeroclub

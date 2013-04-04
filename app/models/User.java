@@ -25,6 +25,9 @@ public class User extends Model {
 	@Email
 	public String email;
 
+	// @OneToOne
+	// public Account account;
+
 	public User(Long id, String username, String password, String email) {
 		this.id       = id;
 		this.username = username;

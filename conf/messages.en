@@ -44,6 +44,10 @@ views.main.switchLanguage=Switch language
 views.main.logout=Logout
 views.main.editProfile=Edit profile
 
+#--- NotFound
+views.notFound.title=Error 404 : Page not found
+views.notFound.message=Path {0} not found
+
 # --- Index
 views.index.title=Aeroclub homepage
 views.index.welcome.message=Welcome to the aeroclub application

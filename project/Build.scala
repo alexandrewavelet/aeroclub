@@ -12,6 +12,7 @@ object ApplicationBuild extends Build {
 	    javaJdbc,
 	    javaEbean,
       filters,
+      anorm,
       "mysql" % "mysql-connector-java" % "5.1.21",
       "net.sf.flexjson" % "flexjson" % "2.1"
     )
