@@ -25,8 +25,7 @@ public class User extends Model {
 	@Email
 	public String email;
 
-	// @OneToOne
-	// public Account account;
+	public Account account;
 
 	public User(Long id, String username, String password, String email) {
 		this.id       = id;
@@ -49,6 +48,13 @@ public class User extends Model {
     public static void update(Long id, User user) {
     	user.password = Crypto.sign(user.password);
     	user.update(id);
+    }
+
+    public Account getAccount() {
+    	if (account == null) {
+    		account = Account.getByUser(this);
+    	}
+    	return account;
     }
 
 	public String toString() {

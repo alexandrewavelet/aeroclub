@@ -9,9 +9,9 @@ import models.Account;
 import play.i18n.*;
 
 public class Users extends Controller {
-
+	
 	static Form<User> userForm = Form.form(User.class);
-	static Result GO_HOME = redirect(routes.Users.edit());
+	static Result GO_HOME      = redirect(routes.Application.index());
 
 	// GET /users/new
 	public static Result _new() {
@@ -45,7 +45,7 @@ public class Users extends Controller {
 		else {
 			User.update(id, filledForm.get());
 			flash("success", Messages.get("controllers.updateSuccess", filledForm.get()));
-			return GO_HOME;
+			return redirect(routes.Users.edit());
 		}
 	}
 

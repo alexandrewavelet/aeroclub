@@ -11,6 +11,13 @@
 
 	    <h2>@Messages.get("views.index.welcome.message")</h2>
 
+	    @if(flash.containsKey("success")) {
+	        <div class="alert alert-success">
+	            <button type="button" class="close" data-dismiss="alert">&times;</button>
+	            @flash.get("success")
+	        </div>
+	    }
+	    
 	    @if(!session.contains("user")) {
 	    
 		    <div id="message"></div>

@@ -56,6 +56,7 @@ views.index.password=Password
 views.index.connect.me=Sign in
 views.index.login.error1=Missing username or password
 views.index.login.error2=Oops connection has failed !
+views.index.create.account=Create an account
 
 # --- Planes
 views.planes.matriculation=Matriculation
@@ -81,7 +82,6 @@ views.planes.show.subtitle=Details of plane n°{0}
 views.planes.show.flights=Under way flights
 
 # --- PlaneTypes
-
 views.planetypes.description=Description
 views.planetypes.fee1=Fee price 1
 views.planetypes.fee2=Fee price 2
@@ -137,7 +137,11 @@ views.users.edit.title=Edit your profil
 views.users.edit.subtitle=Edit your profil
 views.users.email=Email
 views.users.password=Password
+views.users.username=Username
 views.users.edit.submit=Edit
+views.users.new.title=Sign up
+views.users.new.subtitle=Sign up
+views.users.new.submit=Create a new account
 
 # --- Models messages
 models.plane.toString=Plane n°{0} registered {1}

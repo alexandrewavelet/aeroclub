@@ -137,6 +137,7 @@ views.users.edit.title=Modifier votre profil
 views.users.edit.subtitle=Modification du profil
 views.users.email=E-mail
 views.users.password=Mot de passe
+views.users.username=Nom d''utilisateur
 views.users.edit.submit=Modifier votre profil
 views.users.new.title=Inscription
 views.users.new.subtitle=S''inscrire
