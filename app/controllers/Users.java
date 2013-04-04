@@ -5,15 +5,21 @@ import play.mvc.*;
 import play.data.*;
 import views.html.users.*;
 import models.User;
+import models.Account;
 import play.i18n.*;
 
-@Security.Authenticated(Secured.class)
 public class Users extends Controller {
 
 	static Form<User> userForm = Form.form(User.class);
 	static Result GO_HOME = redirect(routes.Users.edit());
 
+	// GET /users/new
+	public static Result _new() {
+		return ok(_new.render(userForm));
+	}
+
 	// GET /user/edit
+	@Security.Authenticated(Secured.class)
 	public static Result edit() {
 		User user = User.find
 						.where()
@@ -24,6 +30,7 @@ public class Users extends Controller {
 	}
 
 	// POST /user
+	@Security.Authenticated(Secured.class)
 	public static Result update() {
 		Form<User> filledForm = userForm.bindFromRequest();
 		Long id = User.find.where()
@@ -38,6 +45,21 @@ public class Users extends Controller {
 		else {
 			User.update(id, filledForm.get());
 			flash("success", Messages.get("controllers.updateSuccess", filledForm.get()));
+			return GO_HOME;
+		}
+	}
+
+	// POST /users
+	public static Result create() {
+		Form<User> filledForm = userForm.bindFromRequest();
+		if (filledForm.hasErrors()) {
+			flash("error", Messages.get("controllers.error"));
+			return badRequest(_new.render(filledForm));
+		}
+		else {
+			filledForm.get().save();
+			Account.create(filledForm.get());
+			flash("success", Messages.get("controllers.createSuccess", filledForm.get()));
 			return GO_HOME;
 		}
 	}

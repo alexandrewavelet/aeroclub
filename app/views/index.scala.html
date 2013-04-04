@@ -20,8 +20,10 @@
 		        @inputText(loginForm("username"),     '_label -> Messages.get("views.index.username"))
 		        @inputPassword(loginForm("password"), '_label -> Messages.get("views.index.password"))
 		        
-		        <input type="submit" value="@Messages.get("views.index.connect.me")" class="btn primary">
-		        
+		        <input type="submit" value="@Messages.get("views.index.connect.me")" class="btn">
+		        <br />
+		        <br />
+		        <a href="@routes.Users._new" class="btn btn-inverse">@Messages.get("views.index.create.account")</a>
 		    }
 	    }
 	</div>

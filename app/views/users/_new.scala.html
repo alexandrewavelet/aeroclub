@@ -1,0 +1,28 @@
+@(userForm: Form[User])
+
+@import helper._
+@import helper.twitterBootstrap._
+@import play.i18n._
+
+@main(Messages.get("views.users.new.title")) {
+
+    @if(flash.containsKey("error")) {
+        <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            @flash.get("error")
+        </div>
+    }
+    
+    <h2>@Messages.get("views.users.new.subtitle")</h2>
+    
+    @form(routes.Users.create) {
+        
+        @inputText(userForm("username"),     '_label -> Messages.get("views.users.username"))
+        @inputText(userForm("email"),        '_label -> Messages.get("views.users.email"))
+        @inputPassword(userForm("password"), '_label -> Messages.get("views.users.password"))
+        
+        <input type="submit" value="@Messages.get("views.users.new.submit")" class="btn">
+        <a href="@request.getHeader("Referer")" class="btn btn-link">@Messages.get("views.back")</a>
+
+    }
+}

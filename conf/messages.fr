@@ -56,6 +56,7 @@ views.index.password=Mot de passe
 views.index.connect.me=Se connecter
 views.index.login.error1=Login ou mot de passe non renseigné
 views.index.login.error2=Oups la connexion a échouée !
+views.index.create.account=Créer un compte
 
 # --- Planes
 views.planes.matriculation=Immatriculation
@@ -81,7 +82,6 @@ views.planes.show.subtitle=Détails de l''avion n°{0}
 views.planes.show.flights=Vols en cours
 
 # --- PlaneTypes
-
 views.planetypes.description=Description
 views.planetypes.fee1=Prix forfait 1
 views.planetypes.fee2=Prix forfait 2
@@ -138,6 +138,9 @@ views.users.edit.subtitle=Modification du profil
 views.users.email=E-mail
 views.users.password=Mot de passe
 views.users.edit.submit=Modifier votre profil
+views.users.new.title=Inscription
+views.users.new.subtitle=S''inscrire
+views.users.new.submit=Créer un nouveau compte
 
 # --- Models messages
 models.plane.toString=Avion n°{0} immatriculé {1}

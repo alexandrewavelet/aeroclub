@@ -43,6 +43,8 @@ POST  /plane/:id/delete          controllers.Planes.delete(id: Long)
 # Users
 GET   /user/edit                 controllers.Users.edit
 POST  /user                      controllers.Users.update
+GET   /users/new                 controllers.Users._new
+POST  /users                     controllers.Users.create
 
 # Javascript routing
 GET   /assets/javascripts/routes controllers.Application.javascriptRoutes()
