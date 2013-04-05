@@ -3,31 +3,51 @@
 # ~~~~
 
 # Home page
-GET    /                        controllers.Application.index
-GET    /lang/:code              controllers.Application.setLang(code: String)
+GET    /                         controllers.Application.index
+GET    /lang/:code               controllers.Application.setLang(code: String)
+GET    /getI18nMessages          controllers.Application.getI18nMessages(keys: String)
 
 # Authentication
-GET    /login                   controllers.Application.login
-POST   /login                   controllers.Application.authenticate
-GET    /logout                  controllers.Application.logout
+POST   /login                    controllers.Application.authenticate
+GET    /logout                   controllers.Application.logout
 
 # Flights
-GET   /flights                  controllers.Flights.index(page: Int ?= 0, pageSize: Int ?= 10)
-GET   /flights/new              controllers.Flights._new
-GET   /flight/:id               controllers.Flights.show(id: Long)
-GET   /flight/:id/edit          controllers.Flights.edit(id: Long)
-POST  /flights                  controllers.Flights.create
-POST  /flight/:id               controllers.Flights.update(id: Long)
-POST  /flight/:id/delete        controllers.Flights.delete(id: Long)
+GET   /flights.json              controllers.Flights.indexJson
+GET   /flights                   controllers.Flights.index(page: Int ?= 0, pageSize: Int ?= 10)
+GET   /flights/new               controllers.Flights._new
+GET   /flight/:id                controllers.Flights.show(id: Long)
+GET   /flight/:id/edit           controllers.Flights.edit(id: Long)
+POST  /flights                   controllers.Flights.create
+POST  /flight/:id                controllers.Flights.update(id: Long)
+POST  /flight/:id/delete         controllers.Flights.delete(id: Long)
+
+# Planetype
+GET   /planetypes                controllers.PlaneTypes.index(page: Int ?= 0, pageSize: Int ?= 10)
+GET   /planetypes/new            controllers.PlaneTypes._new
+GET   /planetype/:id             controllers.PlaneTypes.show(id: Long)
+GET   /planetype/:id/edit        controllers.PlaneTypes.edit(id: Long)
+POST  /planetypes                controllers.PlaneTypes.create
+POST  /planetype/:id             controllers.PlaneTypes.update(id: Long)
+POST  /planetype/:id/delete      controllers.PlaneTypes.delete(id: Long)
 
 # Planes
-GET   /planes                   controllers.Planes.index(page: Int ?= 0, pageSize: Int ?= 10)
-GET   /planes/new               controllers.Planes._new
-GET   /plane/:id                controllers.Planes.show(id: Long)
-GET   /plane/:id/edit           controllers.Planes.edit(id: Long)
-POST  /planes                   controllers.Planes.create
-POST  /plane/:id                controllers.Planes.update(id: Long)
-POST  /plane/:id/delete         controllers.Planes.delete(id: Long)
+GET   /planes.json               controllers.Planes.indexJson
+GET   /planes                    controllers.Planes.index(page: Int ?= 0, pageSize: Int ?= 10)
+GET   /planes/new                controllers.Planes._new
+GET   /plane/:id                 controllers.Planes.show(id: Long)
+GET   /plane/:id/edit            controllers.Planes.edit(id: Long)
+POST  /planes                    controllers.Planes.create
+POST  /plane/:id                 controllers.Planes.update(id: Long)
+POST  /plane/:id/delete          controllers.Planes.delete(id: Long)
+
+# Users
+GET   /user/edit                 controllers.Users.edit
+POST  /user                      controllers.Users.update
+GET   /users/new                 controllers.Users._new
+POST  /users                     controllers.Users.create
+
+# Javascript routing
+GET   /assets/javascripts/routes controllers.Application.javascriptRoutes()
 
 # Map static resources from the /public folder to the /assets URL path
-GET    /assets/*file            controllers.Assets.at(path="/public", file)
+GET   /assets/*file              controllers.Assets.at(path="/public", file)

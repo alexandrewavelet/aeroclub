@@ -1,1 +1,4 @@
 Aeroclub Project for degree
+
+Scala doc in target/scala-2.1.0/api and *-javadoc.jar file
+with "play doc" or "play package-doc"

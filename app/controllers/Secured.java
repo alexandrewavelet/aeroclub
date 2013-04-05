@@ -15,6 +15,6 @@ public class Secured extends Authenticator {
     @Override
     // Generates an alternative result if the user is not authenticated; the default a simple '401 Not Authorized' page.
     public Result onUnauthorized(Context ctx) {
-    	return redirect(routes.Application.login());
+    	return redirect(routes.Application.index());
     }
 }

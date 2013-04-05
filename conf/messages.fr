@@ -37,25 +37,32 @@ views.nbPerPages=Nombre par pages
 
 # --- Main
 views.main.flightsMenu=Gestion des vols
+views.main.planes=Avions
+views.main.planeTypesMenu=Gestion des types d''avions
 views.main.planesMenu=Gestion des avions
 views.main.switchLanguage=Changer de langue
+views.main.logout=Déconnexion
+views.main.editProfile=Editer profil
+
+#--- NotFound
+views.notFound.title=Erreur 404 : Page non trouvé
+views.notFound.message=Chemin {0} non trouvée
 
 # --- Index
 views.index.title=Page d''accueil aeroclub
 views.index.welcome.message=Bienvenue sur l''application de l''aeroclub
-views.index.connection=Vous devez vous connecter pour continuer
-
-# --- Login
-views.login.title=Connexion à l''application
-views.login.subtitle=Se connecter
-views.login.username=Nom d''utilisateur
-views.login.password=Mot de passe
-views.login.connect.me=Se connecter
+views.index.username=Nom d''utilisateur
+views.index.password=Mot de passe
+views.index.connect.me=Se connecter
+views.index.login.error1=Login ou mot de passe non renseigné
+views.index.login.error2=Oups la connexion a échouée !
+views.index.create.account=Créer un compte
 
 # --- Planes
 views.planes.matriculation=Immatriculation
 views.planes.price=Prix
 views.planes.weekReduction=Réduction semaine
+views.planetype.planetype=Type d'avion
 
 views.planes.new.title=Ajouter un avion
 views.planes.new.subtitle=Saisie d''un nouvel avion
@@ -73,6 +80,31 @@ views.planes.index.description=Descriptif
 views.planes.show.title=Détails d''un avion
 views.planes.show.subtitle=Détails de l''avion n°{0}
 views.planes.show.flights=Vols en cours
+
+# --- PlaneTypes
+views.planetypes.description=Description
+views.planetypes.fee1=Prix forfait 1
+views.planetypes.fee2=Prix forfait 2
+views.planetypes.fee3=Prix forfait 3
+views.planetypes.feetime1=Heures forfait 1
+views.planetypes.feetime2=Heures forfait 2
+views.planetypes.feetime3=Heures forfait 3
+
+views.planetype.index.title=Gestion des types d''avions
+views.planetypes.index.add=Ajouter un nouveau type
+views.planetypes.index.subtitle=Liste des types d''avion : {0} type(s)
+views.planetypes.index.description=Descriptif
+
+views.planetypes.new.title=Ajouter un type d''avion
+views.planetypes.new.subtitle=Saisie d''un nouveau type
+views.planetypes.new.submit=Ajouter un type avion
+
+views.planetypes.edit.title=Modifier un type avion
+views.planetypes.edit.subtitle=Modification d''un type avion
+views.planetypes.edit.submit=Modifier le type avion
+
+views.planetypes.show.title=Détails d''un type avion
+views.planetypes.show.subtitle=Détails du type avion n°{0}
 
 # --- Flights
 views.flights.flightReduction=Réduction vol
@@ -100,10 +132,23 @@ views.flights.show.title=Détails d''une séquence de vol
 views.flights.show.subtitle=Détails de la séquence de vol n°{0}
 views.flights.show.plane=Avion utilisé
 
+# --- Users
+views.users.edit.title=Modifier votre profil
+views.users.edit.subtitle=Modification du profil
+views.users.email=E-mail
+views.users.password=Mot de passe
+views.users.username=Nom d''utilisateur
+views.users.edit.submit=Modifier votre profil
+views.users.new.title=Inscription
+views.users.new.subtitle=S''inscrire
+views.users.new.submit=Créer un nouveau compte
+
 # --- Models messages
 models.plane.toString=Avion n°{0} immatriculé {1}
 models.user.toString=Utilisateur n°{0} : {1}
 models.flight.toString=Vol n°{0} du {1} d''une durée de {2} heure(s)
+models.planetype.toString=Type n°{0} {1}
+models.account.toString=Le montant actuel du compte est de {0} Euros, il reste {1} heure(s) sur le forfait 1, {2} sur le forfait 2 et {3} sur le forfait 3
 
 # --- Controllers messages
 controllers.error=Une erreur est survenue
@@ -117,3 +162,5 @@ controllers.application.loginError=Nom d''utilisateur ou mot de passe invalide
 controllers.flights.deleteSuccess=Le vol a été correctement supprimé
 
 controllers.planes.deleteSuccess=L''avion a été correctement supprimé
+
+controllers.planetype.deleteSuccess=Le type d''avion a été correctement supprimé

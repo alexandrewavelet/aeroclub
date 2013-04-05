@@ -1,4 +1,4 @@
-@(flights: com.avaje.ebean.Page[Flight])
+@(planeTypes: com.avaje.ebean.Page[PlaneType])
 
 @import helper._
 @import helper.twitterBootstrap._
@@ -14,7 +14,7 @@
     }
 }
 
-@main(Messages.get("views.flights.index.title")) {
+@main(Messages.get("views.planetype.index.title")) {
     
     @if(flash.containsKey("success")) {
         <div class="alert alert-success">
@@ -23,18 +23,18 @@
         </div>
     }
 
-    @form(routes.Flights._new) {
-        <input type="submit" value="@Messages.get("views.flights.index.add")" class="btn">
+    @form(routes.PlaneTypes._new) {
+        <input type="submit" value="@Messages.get("views.planetypes.index.add")" class="btn">
     }
 
-    <h2>@Messages.get("views.flights.index.subtitle", flights.getTotalRowCount.toString)</h2>
+    <h2>@Messages.get("views.planetypes.index.subtitle", planeTypes.getTotalRowCount.toString)</h2>
 
-    @pagination(flights, routes.Flights.index _)
+    @pagination(planeTypes, routes.PlaneTypes.index _)
 
     <table class="table table-striped">
         <tr>
-            <th>@Messages.get("views.flights.index.description")</th>
-            <td colspan="3">    
+            <th>@Messages.get("views.planetypes.index.description")</th>
+             <td colspan="3">    
                 <div class="btn-group pull-right">
                     <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                         @Messages.get("views.nbPerPages")
@@ -42,27 +42,27 @@
                     </a>
                     <ul class="dropdown-menu pagination-centered">
                         @for(value: Int <- Array(10, 25, 50, 100)) {
-                            <li><a href="@routes.Flights.index(0, value)">@if(getPageSize == value) { <i class="icon-ok"></i> } @value</a></li>
+                            <li><a href="@routes.PlaneTypes.index(0, value)">@if(getPageSize == value) { <i class="icon-ok"></i> } @value</a></li>
                         }
                     </ul>
                 </div>
             </td>
         </tr>
-    @for(flight <- flights.getList) {
+    @for(planeType <- planeTypes.getList) {
         <tr>
-            <td>@flight</td>
+            <td>@planeType</td>
             <td>
-            @form(routes.Flights.show(flight.id)) {
+            @form(routes.PlaneTypes.show(planeType.id)) {
                 <input type="submit" value="@Messages.get("views.show")" class="btn btn-primary">
             }
             </td>
             <td>
-            @form(routes.Flights.edit(flight.id)) {
+            @form(routes.PlaneTypes.edit(planeType.id)) {
                 <input type="submit" value="@Messages.get("views.edit")" class="btn btn-primary">
             }
             </td>
             <td>
-            @form(routes.Flights.delete(flight.id)) {
+            @form(routes.PlaneTypes.delete(planeType.id)) {
                 <input type="submit" value="@Messages.get("views.delete")" class="btn btn-primary">
             }
             </td>
